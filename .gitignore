@@ -1,0 +1,17 @@
+# Patrick's own documents (resume, reviews, work files). This repo is PUBLIC:
+# originals never get committed, only what he approves for the site.
+private/*
+!private/README.md
+
+# Eleventy / Node
+node_modules/
+_site/
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json

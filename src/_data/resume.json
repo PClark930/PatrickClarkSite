@@ -1,0 +1,28 @@
+{
+  "_note": "Everything here is published on a PUBLIC site and stays in the repo's history forever. Only what Patrick has approved goes in. Filled from his documents in private/ (see CLAUDE.md, 'Documents'). Dates are \"YYYY-MM\" or \"YYYY\"; an empty end means Present. Remove a section by leaving its list empty.",
+  "headline": "",
+  "location": "",
+  "email": "",
+  "links": [],
+  "summary": "",
+  "experience": [],
+  "education": [],
+  "certifications": [],
+  "skills": [],
+  "_examples": {
+    "links": [{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/..." }],
+    "experience": [
+      {
+        "title": "Job title",
+        "company": "Company",
+        "location": "City, ST",
+        "start": "2021-06",
+        "end": "",
+        "highlights": ["One line on what he did and what came of it."]
+      }
+    ],
+    "education": [{ "school": "School", "credential": "Degree or program", "end": "2018" }],
+    "certifications": [{ "name": "Certification", "issuer": "Issuer", "date": "2023-04" }],
+    "skills": [{ "group": "Group name", "items": ["Skill", "Skill"] }]
+  }
+}

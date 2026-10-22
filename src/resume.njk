@@ -1,0 +1,76 @@
+---
+title: Resume
+description: Patrick Clark's resume.
+layout: layouts/base.njk
+permalink: /resume/
+---
+{# Built entirely from src/_data/resume.json. Empty sections don't render. #}
+{%- set r = resume %}
+<article class="resume">
+  <header>
+    <h1>{{ site.name }}</h1>
+    {%- if r.headline %}<p class="lede">{{ r.headline }}</p>{% endif %}
+    {%- if r.location or r.email or r.links.length %}
+    <p class="contact">
+      {%- if r.location %}<span>{{ r.location }}</span>{% endif %}
+      {%- if r.email %}<a href="mailto:{{ r.email }}">{{ r.email }}</a>{% endif %}
+      {%- for l in r.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+    </p>
+    {%- endif %}
+  </header>
+
+  {%- if not (r.summary or r.experience.length or r.education.length) %}
+  <p>The resume isn't up yet.</p>
+  {%- endif %}
+
+  {%- if r.summary %}
+  <section><h2>Summary</h2><p>{{ r.summary }}</p></section>
+  {%- endif %}
+
+  {%- if r.experience.length %}
+  <section>
+    <h2>Experience</h2>
+    {%- for job in r.experience %}
+    <div class="entry">
+      <h3>{{ job.title }}{% if job.company %}, {{ job.company }}{% endif %}</h3>
+      <p class="meta">{{ job.start | monthYear }} – {{ job.end | monthYear }}{% if job.location %} · {{ job.location }}{% endif %}</p>
+      {%- if job.highlights.length %}
+      <ul>{% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}</ul>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
+  {%- if r.education.length %}
+  <section>
+    <h2>Education</h2>
+    {%- for e in r.education %}
+    <div class="entry">
+      <h3>{{ e.credential }}{% if e.school %}, {{ e.school }}{% endif %}</h3>
+      {%- if e.end %}<p class="meta">{{ e.end | monthYear }}</p>{% endif %}
+    </div>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
+  {%- if r.certifications.length %}
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      {%- for c in r.certifications %}
+      <li>{{ c.name }}{% if c.issuer %}, {{ c.issuer }}{% endif %}{% if c.date %} ({{ c.date | monthYear }}){% endif %}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if r.skills.length %}
+  <section>
+    <h2>Skills</h2>
+    {%- for s in r.skills %}
+    <p><strong>{{ s.group }}:</strong> {{ s.items | join(", ") }}</p>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+</article>
