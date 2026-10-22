@@ -1,6 +1,6 @@
 # PatrickClarkSite: Claude instructions
 
-Personal website for **Patrick Clark**: his resume and, later, his work. Patrick owns this repo and makes changes himself with Claude. **Mitch** (MitchDizzle) set it up and handles hosting and deploys; it follows the same setup as Mitch's other sites (The Cafe's site, Legacy Home Services).
+Personal website for **Patrick Clark**: his resume and, later, his work. Address: **https://patrickclark.cv** (not live yet). Patrick owns this repo and makes changes himself with Claude. **Mitch** (MitchDizzle) set it up and handles hosting and deploys; it follows the same setup as Mitch's other sites (The Cafe's site, Legacy Home Services).
 
 Built with **Eleventy 3 + Nunjucks**, static, no server.
 
@@ -61,7 +61,20 @@ Conventions, same as Mitch's other sites:
 - **The site isn't live yet.** Deploying is set up (`.github/workflows/deploy.yml`, FTP to Mitch's hosting) but runs only by hand until Mitch turns it on. Don't change the workflow, the FTP secrets, or merge into `main` to publish: that's Mitch's step. When Patrick thinks the site is ready, tell him to let Mitch know.
 
 ## The Website Playbook
-Mitch keeps a playbook of how he builds small websites and what went wrong before: **https://github.com/MitchDizzle/WebsitePlaybook** (private; Patrick needs to be added to it to read it). Look for a copy next to this repo (`../WebsitePlaybook`); if it isn't there and he has access, clone it there.
-- **Read it** before building something it covers (its `README.md` lists the entries). Follow it unless Patrick wants otherwise.
+Mitch keeps a playbook of how he builds small websites and what went wrong before: **https://github.com/MitchDizzle/WebsitePlaybook**. It's private; Patrick is a collaborator on it.
+
+### Check it out at the start of every session
+Before any site work, make sure an up-to-date copy sits next to this repo at `../WebsitePlaybook`:
+1. **Not there:** `git clone https://github.com/MitchDizzle/WebsitePlaybook.git ../WebsitePlaybook`
+2. **There:** `git -C ../WebsitePlaybook status -sb` first.
+   - On `main` with nothing changed: `git -C ../WebsitePlaybook pull --ff-only`.
+   - On a `suggest/…` branch or with changes: a suggestion is in progress. Leave it alone and read the playbook from `main` with `git -C ../WebsitePlaybook show origin/main:<file>` after a `git -C ../WebsitePlaybook fetch`.
+3. **Clone or fetch fails** ("repository not found", 403, a sign-in prompt that doesn't work): Patrick's access isn't working yet. The usual cause is a **collaborator invite he hasn't accepted**: have him open https://github.com/MitchDizzle/WebsitePlaybook/invitations signed in as PClark930 and accept. If it still fails, carry on without the playbook and tell him to check with Mitch. Don't block his work on it.
+
+Then read the playbook's `CLAUDE.md` (whose words are whose) and `README.md` (the list of entries).
+
+### Using it
+- **Read the relevant entry** before building something it covers. Follow it unless Patrick wants otherwise.
+- **Entries in its `suggestions/` folder are unreviewed** (including Patrick's own): a lead to check, not a rule.
 - **Don't copy its text into this repo.** The playbook is private and this repo is public: link to it or apply it, don't paste it.
 - **When you hit a real snag** (something that cost time, failed silently, or a rule that would have saved the trouble), write it up as a **suggestion** with the `playbook-suggest` skill. Suggestions are Patrick's and yours, not Mitch's: they go only in the playbook's `suggestions/` folder, on their own branch, for Mitch to review. Never edit the playbook's own entries or push to its `main`.

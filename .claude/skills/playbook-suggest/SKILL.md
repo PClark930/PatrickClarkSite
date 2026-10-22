@@ -13,7 +13,7 @@ No: a typo, a one-off mistake, taste, or something the playbook already says (ch
 
 ## Steps
 1. **Tell Patrick** in one line what you'd suggest and why. Write it only if he agrees.
-2. **Find the playbook** at `../WebsitePlaybook`. Not there: clone it there. No access: skip to "No access" below.
+2. **Get the playbook** at `../WebsitePlaybook`, as in "Check it out at the start of every session" in `CLAUDE.md`. No access: skip to "No access" below.
 3. **Branch:** `git -C ../WebsitePlaybook switch main && git -C ../WebsitePlaybook pull`, then `git -C ../WebsitePlaybook switch -c suggest/patrick-<short-topic>`.
 4. **Write** `suggestions/<yyyy-mm-dd>-<short-topic>.md` from the template in `suggestions/README.md`: `suggested_by: Patrick Clark`, `project: PatrickClarkSite`, `status: unreviewed`. Facts only: what happened, what fixed it, the rule you'd suggest, links to sources. Nothing private from Patrick's documents.
 5. **Add only that file.** Don't touch the playbook's entries, its `README.md`, or anything else.

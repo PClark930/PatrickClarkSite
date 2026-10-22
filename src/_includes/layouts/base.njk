@@ -8,6 +8,12 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ title or site.name }}">
     <meta property="og:description" content="{{ description or site.description }}">
+    {#- The 404 page is served at whatever address was asked for, so it gets no
+        canonical address. #}
+    {%- if page.url != "/404.html" %}
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    {%- endif %}
     {#- Kept out of search engines until the site is real. Set "preview": false
         in src/_data/site.json at launch. #}
     {%- if site.preview %}

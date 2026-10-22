@@ -1,6 +1,6 @@
 # Patrick Clark: Website
 
-Personal site for Patrick Clark: resume and work. Eleventy (static), same setup as Mitch's other sites.
+Personal site for Patrick Clark: resume and work. Will live at **https://patrickclark.cv**. Eleventy (static), same setup as Mitch's other sites.
 
 ## Working on it with Claude
 Open this folder in Claude Code. `CLAUDE.md` tells Claude how this repo works; you don't need to read it.
