@@ -1,0 +1,49 @@
+name: Build and Deploy
+
+# Hosted on the developer's nfoservers hosting, same setup as The Cafe's and
+# Legacy's sites: build with Eleventy, upload _site/ over FTP.
+#
+# NOT LIVE YET. Until Patrick has something worth publishing, this only runs
+# by hand (Actions tab -> Build and Deploy -> Run workflow). To go live, the
+# FTP_* secrets must be set on the repo (Settings -> Secrets and variables ->
+# Actions), then uncomment the `push` trigger below. Leave that to Mitch.
+#
+# Work happens on `dev`; merging into `main` deploys (once `push` is on).
+on:
+  # push:
+  #   branches:
+  #     - main
+  #   paths-ignore:
+  #     - 'README.md'
+  #     - 'CLAUDE.md'
+  #     - '.claude/**'
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          local-dir: ./_site/

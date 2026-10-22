@@ -1,0 +1,17 @@
+---
+title: ""
+layout: layouts/base.njk
+---
+{# Placeholder home page. Patrick decides what goes here; see CLAUDE.md. #}
+<section class="intro">
+  <h1>{{ site.name }}</h1>
+  {%- if resume.headline %}
+  <p class="lede">{{ resume.headline }}</p>
+  {%- else %}
+  <p class="lede">This site is being built.</p>
+  {%- endif %}
+  {%- if resume.summary %}
+  <p>{{ resume.summary }}</p>
+  {%- endif %}
+  <p><a href="/resume/">Resume</a></p>
+</section>
