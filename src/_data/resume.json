@@ -4,7 +4,7 @@
   "location": "Leavenworth, KS",
   "email": "pclark7985@gmail.com",
   "links": [],
-  "summary": "",
+  "summary": "Recreation Supervisor with the City of Leavenworth since 2013 and an Army Captain, leading teams as large as 60+ staff and 79 soldiers. I direct aquatics, fitness programs, and year-round community events, covering staffing, training, budgets, marketing, and facility operations. In the Army I've commanded a fuel distribution company accountable for $20 million in equipment, and I now coach and evaluate Army Reserve units in training. I bring the same planning, discipline, and standards to public service.",
   "experience": [
     {
       "title": "Recreation Supervisor",
@@ -96,7 +96,13 @@
     { "name": "Lifeguard Instructor", "issuer": "", "date": "" },
     { "name": "Aquatic Facility Operator (AFO)", "issuer": "", "date": "" }
   ],
-  "skills": [],
+  "skills": [
+    { "group": "Leadership", "items": ["Staff supervision", "Recruiting and hiring", "Training and certification", "Scheduling", "Performance reviews", "Mentoring", "After Action Reviews"] },
+    { "group": "Operations and Planning", "items": ["Event planning", "Mission planning", "Logistics", "Budget and expense monitoring", "Vendor coordination", "Equipment accountability"] },
+    { "group": "Aquatics and Safety", "items": ["Pool filtration and water chemistry", "HVAC monitoring", "Lifeguard and swim instruction", "First Aid and CPR certification", "Learn-to-Swim programs", "Safety drills"] },
+    { "group": "Communications", "items": ["Public relations", "Email and print marketing", "Organizational communications"] },
+    { "group": "Software", "items": ["RecDesk", "Munis"] }
+  ],
   "_examples": {
     "links": [{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/..." }],
     "experience": [
