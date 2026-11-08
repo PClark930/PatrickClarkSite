@@ -30,7 +30,8 @@ const shape = {
   links: { label: TEXT, url: TEXT },
   // hours: hours per week, printed only on the federal PDF (USAJOBS asks for it).
   experience: { title: TEXT, company: TEXT, location: TEXT, start: DATE, end: DATE, hours: TEXT, highlights: LIST },
-  education: { school: TEXT, credential: TEXT, end: DATE },
+  // kind: "civilian" or "military"; the site groups schools by it.
+  education: { school: TEXT, credential: TEXT, end: DATE, kind: TEXT },
   certifications: { name: TEXT, issuer: TEXT, date: DATE },
   honors: { name: TEXT, issuer: TEXT, date: DATE, detail: TEXT },
   skills: { group: TEXT, items: LIST },
@@ -136,6 +137,9 @@ function checkEntry(section, entry, index, problems) {
   }
   if (section === "links" && typeof entry.url === "string" && entry.url && !/^(https?:\/\/|mailto:)/.test(entry.url)) {
     problems.push(`${where}: url should start with https://.`);
+  }
+  if (section === "education" && entry.kind !== undefined && !["civilian", "military"].includes(entry.kind)) {
+    problems.push(`${where}: kind should be "civilian" or "military".`);
   }
   if (section === "experience" && DATE_FORMAT.test(String(entry.start)) && DATE_FORMAT.test(String(entry.end))) {
     const [sy, sm] = parts(entry.start);

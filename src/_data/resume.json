@@ -1,8 +1,8 @@
 {
-  "_note": "Everything here is published on a PUBLIC site and stays in the repo's history forever. Only what Patrick has approved goes in. Filled from his documents in private/ (see CLAUDE.md, 'Documents'). Dates are \"YYYY-MM\" or \"YYYY\"; an empty end means Present. Remove a section by leaving its list empty. Kept off the site at Patrick's request (Nov 2026): phone, email, security clearance, supervisors, GPA and transcripts.",
+  "_note": "Everything here is published on a PUBLIC site and stays in the repo's history forever. Only what Patrick has approved goes in. Filled from his documents in private/ (see CLAUDE.md, 'Documents'). Dates are \"YYYY-MM\" or \"YYYY\"; an empty end means Present. Remove a section by leaving its list empty. Kept off the site at Patrick's request (Nov 2026): phone, personal email, security clearance, supervisors, GPA and transcripts. The public email is contact@patrickclark.cv, a forward Mitch set up.",
   "headline": "Army Reserve Captain · Operations, Logistics & Program Management",
   "location": "Leavenworth, KS",
-  "email": "",
+  "email": "contact@patrickclark.cv",
   "links": [{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/patrick-clark-021230158" }],
   "summary": "Army Reserve Captain and City of Leavenworth Recreation Supervisor focused on planning and operations: multi-year mission planning, training exercises, logistics, community events and programs, budgets, and staff leadership.",
   "experience": [
@@ -96,11 +96,12 @@
     {
       "school": "University of Kansas",
       "credential": "Bachelor of General Studies, Organizational Communications (minor in Business)",
-      "end": "2020-05"
+      "end": "2020-05",
+      "kind": "civilian"
     },
-    { "school": "Army Logistics University", "credential": "Logistics Captains Career Course", "end": "" },
-    { "school": "U.S. Army", "credential": "Observer Coach/Trainer (OC/T) Academy", "end": "" },
-    { "school": "U.S. Army", "credential": "Quartermaster Basic Officer Leadership Course", "end": "" }
+    { "school": "Army Logistics University", "credential": "Logistics Captains Career Course", "end": "", "kind": "military" },
+    { "school": "U.S. Army", "credential": "Observer Coach/Trainer (OC/T) Academy", "end": "", "kind": "military" },
+    { "school": "U.S. Army", "credential": "Quartermaster Basic Officer Leadership Course", "end": "", "kind": "military" }
   ],
   "certifications": [
     { "name": "CPR/First Aid", "issuer": "American Red Cross", "date": "" },
@@ -134,7 +135,7 @@
         "highlights": ["One line on what he did and what came of it."]
       }
     ],
-    "education": [{ "school": "School", "credential": "Degree or program", "end": "2018" }],
+    "education": [{ "school": "School", "credential": "Degree or program", "end": "2018", "kind": "civilian (or military)" }],
     "certifications": [{ "name": "Certification", "issuer": "Issuer", "date": "2023-04" }],
     "honors": [{ "name": "Award or honor", "issuer": "Who gave it", "date": "2024", "detail": "Optional one line on what it was for." }],
     "skills": [{ "group": "Group name", "items": ["Skill", "Skill"] }]

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+  Source for the site icon PNGs (the master is src/assets/img/icon.svg).
+  Remake them with scripts/make-icons.js after changing icon.svg.
+  ?size=N picks the canvas; ?bg=1 adds the charcoal square that phones need
+  for the home-screen icon (apple-touch-icon).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  html, body { margin: 0; overflow: hidden; background: transparent; }
+  .box { display: grid; place-items: center; }
+  .bg { background: #2b3035; }
+  img { display: block; }
+</style>
+</head>
+<body>
+<div class="box" id="box"><img id="icon" src="../src/assets/img/icon.svg" alt=""></div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const size = Number(q.get("size") || 32);
+  const box = document.getElementById("box");
+  const icon = document.getElementById("icon");
+  box.style.width = box.style.height = size + "px";
+  if (q.get("bg")) { box.classList.add("bg"); icon.style.width = icon.style.height = Math.round(size * 0.74) + "px"; }
+  else { icon.style.width = icon.style.height = size + "px"; }
+</script>
+</body>
+</html>
