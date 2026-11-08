@@ -1,8 +1,13 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const { assertResume } = require("./scripts/check-resume.js");
 
 module.exports = function (eleventyConfig) {
+  // Stop the build when resume.json has a typo the page would quietly drop
+  // (an unknown field, a date like "Present"). See scripts/check-resume.js.
+  eleventyConfig.on("eleventy.before", assertResume);
+
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   // Eleventy won't pick up a dotfile from a glob, so map it explicitly.
