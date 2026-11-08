@@ -16,7 +16,7 @@ This repo is **public**. Read "THIS REPO IS PUBLIC" and "Before you publish" in 
 | One posting he cares about | Tailored | Yes |
 | Email to a person, or a printout | Standard, private copy | Yes |
 
-**Public copy** (standard, no phone): https://patrickclark.cv/Patrick_Clark_Resume.pdf. It updates when `dev` is merged into `main` (Mitch's step).
+**Public copy** (standard, no phone): https://patrickclark.cv/Patrick_Clark_Resume.pdf. It updates when `dev` is merged into `main`, which deploys the site (done when Patrick says he's ready to deploy).
 
 **Private copies** open only when signed in to GitHub as Patrick or Mitch. He can bookmark them on his phone:
 - Standard: https://github.com/PClark930/PatrickClarkPrivate/releases/download/pdfs/Patrick_Clark_Resume.pdf

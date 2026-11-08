@@ -75,10 +75,10 @@ Conventions, same as Mitch's other sites:
 - `"preview": true` in `site.json` keeps search engines away. It goes `false` at launch, with Mitch.
 
 ## Branches and deploying
-- **`dev` is where work happens.** Commit there. **`main` is what goes live.**
+- **Bulk changes go to `dev`.** Commit there, as many changes as it takes. **`main` is what goes live.**
 - Check the branch before committing (`git status -sb`).
-- **Merging into `main` publishes the site.** `.github/workflows/deploy.yml` builds it, uploads it to Mitch's hosting over FTP, then checks that the live pages load. A red X on that run means look at https://patrickclark.cv right away.
-- Merging into `main` is Mitch's step: don't merge or push to `main`, and don't change the workflows, `src/.htaccess`, or the FTP secrets. When Patrick wants a change published, tell him to let Mitch know.
+- **Merging `dev` into `main` deploys the site**, and it happens when Patrick says he needs to deploy. Then you may merge or push `dev` into `main` for him (Mitch's go-ahead, November 2026). Run `npm run build` first; don't deploy with a failing check. `.github/workflows/deploy.yml` builds it, uploads it to Mitch's hosting over FTP, then checks that the live pages load. A red X on that run means look at https://patrickclark.cv right away and tell Patrick to let Mitch know.
+- Still Mitch's: don't change the workflows, `src/.htaccess`, or the FTP secrets.
 - Until launch, `"preview": true` in `site.json` keeps search engines from listing the site even though it's online.
 
 ## The Website Playbook

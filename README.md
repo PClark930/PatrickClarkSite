@@ -21,4 +21,4 @@ Open http://localhost:8080. The page reloads when a file is saved. `npm run buil
 Every build checks the resume data for typos, and `npm run build` then checks the finished pages for a phone number, a second email address, or anything from `private/`. If one finds something, the build stops and says what to fix. GitHub runs the same build on every push to `dev`.
 
 ## Going live
-Work happens on `dev`; `main` is what's published. Merging `dev` into `main` puts the site on https://patrickclark.cv within a few minutes; Mitch handles that step. Until launch, search engines are asked not to list it (`"preview": true` in `src/_data/site.json`).
+Work happens on `dev`; `main` is what's published. Merging `dev` into `main` puts the site on https://patrickclark.cv within a few minutes; do it when you're ready to deploy (Claude can do it for you). Until launch, search engines are asked not to list it (`"preview": true` in `src/_data/site.json`).
