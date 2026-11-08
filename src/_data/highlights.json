@@ -1,0 +1,9 @@
+{
+  "_note": "The big numbers on the home page. PUBLIC, like resume.json. Every figure must match a fact already in resume.json; change both together.",
+  "stats": [
+    { "figure": "79", "label": "Soldiers led as a company commander", "tag": "Army Reserve" },
+    { "figure": "$20M", "label": "In unit equipment accountability", "tag": "Army Reserve" },
+    { "figure": "15", "label": "Community events planned and run each year", "tag": "City of Leavenworth" },
+    { "figure": "62", "label": "Seasonal staff supervised, most recruited and hired", "tag": "City of Leavenworth" }
+  ]
+}

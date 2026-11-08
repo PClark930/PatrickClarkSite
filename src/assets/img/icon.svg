@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Patrick Clark</title>
+  <path d="M32 3 57 11.5V30c0 15.2-10.4 25.6-25 31C17.4 55.6 7 45.2 7 30V11.5Z" fill="#2f6690" stroke="#1f4a6b" stroke-width="2" stroke-linejoin="round"/>
+  <g fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linejoin="round">
+    <path d="M15 42V21h5.5a5.5 5.5 0 0 1 0 11H15" stroke-linecap="butt"/>
+    <path d="M48.7 24.8a9.5 9.5 0 1 0 0 13.4" stroke-linecap="round"/>
+  </g>
+</svg>

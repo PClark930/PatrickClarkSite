@@ -9,11 +9,12 @@
   <meta name="robots" content="noindex">
   {#- Self-contained on purpose: the CSS is inline and every link is a full
       address, so scripts/resume-pdf.js can print the page straight from disk
-      without a local path ending up in the PDF. The web font makes the PDF
-      look the same whichever computer prints it. #}
+      without a local path ending up in the PDF. The font is Arial (Patrick's
+      choice); Arimo, loaded below, has Arial's exact measurements, so a computer
+      without Arial (like GitHub's Linux runners) lays the PDF out the same. #}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=block">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400&display=block">
   <style>
 {% include "css/resume-print.css" %}
   </style>

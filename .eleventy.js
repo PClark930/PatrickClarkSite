@@ -25,6 +25,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  // Browsers ask for /favicon.ico on their own; made by scripts/make-icons.js.
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
   // Eleventy won't pick up a dotfile from a glob, so map it explicitly.
   eleventyConfig.addPassthroughCopy({ "src/.htaccess": ".htaccess" });
 
@@ -40,6 +42,9 @@ module.exports = function (eleventyConfig) {
       year: "numeric",
     });
   });
+
+  // Schools of one kind ("civilian", "military"; "" for none), in resume.json order.
+  eleventyConfig.addFilter("byKind", (list, kind) => (list || []).filter((e) => (e.kind || "") === kind));
 
   // Cache busting: a content hash on CSS/JS URLs, same as The Cafe's site.
   // Required because .htaccess caches CSS and JS for a week.

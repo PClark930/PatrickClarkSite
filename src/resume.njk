@@ -1,6 +1,6 @@
 ---
 title: Resume
-description: Patrick Clark's resume.
+description: "Resume of Patrick Clark, Army Reserve Captain: experience, civilian and military education, certifications, and honors."
 layout: layouts/base.njk
 permalink: /resume/
 ---
@@ -32,7 +32,7 @@ permalink: /resume/
   {%- endif %}
 
   {%- if r.experience.length %}
-  <section>
+  <section class="experience">
     <h2>Experience</h2>
     {%- for job in r.experience %}
     <div class="entry">
@@ -48,12 +48,19 @@ permalink: /resume/
 
   {%- if r.education.length %}
   <section>
-    <h2>Education</h2>
-    {%- for e in r.education %}
+    <h2>Education and training</h2>
+    {#- Grouped by kind ("civilian", "military"); a school without one is listed last. #}
+    {%- for group in [["civilian", "Civilian"], ["military", "Military"], ["", ""]] %}
+    {%- set schools = r.education | byKind(group[0]) %}
+    {%- if schools.length %}
+    {%- if group[1] %}<p class="edu-group">{{ group[1] }}</p>{% endif %}
+    {%- for e in schools %}
     <div class="entry">
       <h3>{{ e.credential }}{% if e.school %}, {{ e.school }}{% endif %}</h3>
       {%- if e.end %}<p class="meta">{{ e.end | monthYear }}</p>{% endif %}
     </div>
+    {%- endfor %}
+    {%- endif %}
     {%- endfor %}
   </section>
   {%- endif %}
@@ -64,6 +71,17 @@ permalink: /resume/
     <ul>
       {%- for c in r.certifications %}
       <li>{{ c.name }}{% if c.issuer %}, {{ c.issuer }}{% endif %}{% if c.date %} ({{ c.date | monthYear }}){% endif %}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if r.honors.length %}
+  <section>
+    <h2>Honors and Awards</h2>
+    <ul>
+      {%- for h in r.honors %}
+      <li>{{ h.name }}{% if h.issuer %}, {{ h.issuer }}{% endif %}{% if h.date %} ({{ h.date | monthYear }}){% endif %}{% if h.detail %}: {{ h.detail }}{% endif %}</li>
       {%- endfor %}
     </ul>
   </section>

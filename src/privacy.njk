@@ -1,0 +1,47 @@
+---
+title: Privacy and disclaimer
+description: "How this site handles your information, and its relationship to the U.S. Army, the Department of Defense, and the City of Leavenworth."
+layout: layouts/base.njk
+permalink: /privacy/
+---
+{#- Patrick's words, in the first person. Keep "Last updated" current when this changes. #}
+<article class="prose">
+  <h1>Privacy and disclaimer</h1>
+  <p class="lede">This is my personal website. Here's what it does with your information, and what it isn't.</p>
+
+  <section>
+    <h2>Your privacy</h2>
+    <ul>
+      <li><strong>No tracking.</strong> This site doesn't use cookies, analytics, ads, or tracking tools.</li>
+      <li><strong>Nothing to fill out.</strong> There are no forms or sign-ups, so the site doesn't collect your name, email, or anything else you type.</li>
+      <li><strong>Server logs.</strong> Like most websites, the company that hosts this site may keep standard server logs (such as IP address, browser type, and the pages requested) for security and troubleshooting. I don't use them to track or identify visitors.</li>
+      {%- if resume.email %}
+      <li><strong>Email.</strong> If you write to {{ resume.email }}, your message is forwarded to my inbox. I use it only to reply to you and don't share it.</li>
+      {%- endif %}
+      <li><strong>Other sites.</strong> Links to other sites, like LinkedIn, take you to services with their own privacy policies.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Not an official government site</h2>
+    <p>This website is personal. It is not an official website of the U.S. Army, the Department of Defense, or any other part of the U.S. Government, and none of them created, reviewed, or endorsed it.</p>
+    <p>My rank, positions, and unit names appear only to describe my own service history. They don't mean the Army or the Department of Defense endorses me, this site, or anything on it. Any views here are my own and don't represent the Department of the Army, the Department of Defense, or the U.S. Government.</p>
+  </section>
+
+  <section>
+    <h2>Insignia, seals, and logos</h2>
+    <p>This site doesn't use official insignia, seals, emblems, or logos of the U.S. Army, the Department of Defense, or any government agency. The shield icon is my own design. It isn't a military emblem and doesn't stand for any unit or agency.</p>
+  </section>
+
+  <section>
+    <h2>City of Leavenworth</h2>
+    <p>The City of Leavenworth hasn't reviewed or endorsed this site. City programs and events are mentioned only to describe my work there.</p>
+  </section>
+
+  <section>
+    <h2>Accuracy and contact</h2>
+    <p>The information here is accurate to the best of my knowledge as of the date below.{% if resume.email %} The best way to reach me is by email at <a href="mailto:{{ resume.email }}">{{ resume.email }}</a>.{% endif %}</p>
+  </section>
+
+  <p class="meta">Last updated November 2026</p>
+</article>

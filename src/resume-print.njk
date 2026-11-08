@@ -19,7 +19,7 @@ eleventyExcludeFromCollections: true
 {%- set skills = v.skills or r.skills %}
 {%- set contacts = [
   { text: p.address or r.location },
-  { text: r.email, href: "mailto:" + r.email },
+  { text: p.email or r.email, href: "mailto:" + (p.email or r.email) },
   { text: p.phone },
   { text: site.url | replace("https://", ""), href: site.url }
 ] | selectattr("text") %}
@@ -30,8 +30,9 @@ eleventyExcludeFromCollections: true
     {%- for c in contacts %}{% if not loop.first %} | {% endif %}{% if c.href %}<a href="{{ c.href }}">{{ c.text }}</a>{% else %}{{ c.text }}{% endif %}{% endfor %}
     {%- for l in r.links %} | <a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
   </p>
-  {%- if v.federal and p.federalDetails and p.federalDetails.length %}
-  <p class="details">{{ p.federalDetails | join(" | ") }}</p>
+  {%- set details = (p.details or []).concat((p.federalDetails or []) if v.federal else []) %}
+  {%- if details.length %}
+  <p class="details">{{ details | join(" | ") }}</p>
   {%- endif %}
 </header>
 
@@ -52,6 +53,10 @@ eleventyExcludeFromCollections: true
   {%- set hours = job.hours if v.federal else "" %}
   {%- if job.location or hours %}
   <p class="job-line">{{ job.location }}{% if job.location and hours %} | {% endif %}{% if hours %}Hours per week: {{ hours }}{% endif %}</p>
+  {%- endif %}
+  {%- set supervisor = p.supervisors[job.title] if (v.federal and p.supervisors) else "" %}
+  {%- if supervisor %}
+  <p class="job-line">Supervisor: {{ supervisor }}</p>
   {%- endif %}
   {%- if bullets.length %}
   <ul>{% for h in bullets %}<li>{{ h }}</li>{% endfor %}</ul>
@@ -75,6 +80,15 @@ eleventyExcludeFromCollections: true
 <ul class="list">
   {%- for c in r.certifications %}
   <li>{{ c.name }}{% if c.issuer %}, {{ c.issuer }}{% endif %}{% if c.date %} ({{ c.date | monthYear }}){% endif %}</li>
+  {%- endfor %}
+</ul>
+{%- endif %}
+
+{%- if r.honors.length %}
+<h2>Honors and Awards</h2>
+<ul class="list">
+  {%- for h in r.honors %}
+  <li>{{ h.name }}{% if h.issuer %}, {{ h.issuer }}{% endif %}{% if h.date %} ({{ h.date | monthYear }}){% endif %}{% if h.detail %}: {{ h.detail }}{% endif %}</li>
   {%- endfor %}
 </ul>
 {%- endif %}

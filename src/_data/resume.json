@@ -1,54 +1,67 @@
 {
-  "_note": "Everything here is published on a PUBLIC site and stays in the repo's history forever. Only what Patrick has approved goes in. Filled from his documents in private/ (see CLAUDE.md, 'Documents'). Dates are \"YYYY-MM\" or \"YYYY\"; an empty end means Present. Remove a section by leaving its list empty.",
-  "headline": "Recreation Supervisor · Army Captain",
+  "_note": "Everything here is published on a PUBLIC site and stays in the repo's history forever. Only what Patrick has approved goes in. Filled from his documents in private/ (see CLAUDE.md, 'Documents'). Dates are \"YYYY-MM\" or \"YYYY\"; an empty end means Present. Remove a section by leaving its list empty. Kept off the site at Patrick's request (Nov 2026): phone, personal email, security clearance, supervisors, GPA and transcripts. The public email is contact@patrickclark.cv, a forward Mitch set up.",
+  "headline": "Army Reserve Captain · Operations, Logistics & Program Management",
   "location": "Leavenworth, KS",
-  "email": "pclark7985@gmail.com",
-  "links": [],
-  "summary": "Recreation Supervisor with the City of Leavenworth since 2013 and an Army Captain, leading teams as large as 60+ staff and 79 soldiers. I direct aquatics, fitness programs, and year-round community events, covering staffing, training, budgets, marketing, and facility operations. In the Army I've commanded a fuel distribution company accountable for $20 million in equipment, and I now coach and evaluate Army Reserve units in training. I bring the same planning, discipline, and standards to public service.",
+  "email": "contact@patrickclark.cv",
+  "links": [{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/patrick-clark-021230158" }],
+  "summary": "Army Reserve Captain and City of Leavenworth Recreation Supervisor focused on planning and operations: multi-year mission planning, training exercises, logistics, community events and programs, budgets, and staff leadership.",
   "experience": [
+    {
+      "title": "Team XO, Observer Coach/Trainer (OC/T), Captain",
+      "company": "2-383rd Training Support Battalion, U.S. Army Reserve",
+      "location": "Leavenworth, KS",
+      "start": "2025-10",
+      "end": "",
+      "hours": "5",
+      "highlights": [
+        "Serve as second-in-command of an OC/T team that coaches, trains, and evaluates Army Reserve units during collective training; have evaluated 5 teams.",
+        "Coordinate team personnel, logistics, scheduling, and administrative requirements to execute exercises.",
+        "Lead After Action Reviews with unit leaders, measuring performance against Army doctrine and standards.",
+        "Coach company-level leaders on mission planning, troop leading procedures, and sustainment operations."
+      ]
+    },
     {
       "title": "Recreation Supervisor",
       "company": "City of Leavenworth",
       "location": "Leavenworth, KS",
       "start": "2025-02",
-      "end": "",
+      "end": "2026-11",
+      "hours": "40+",
       "highlights": [
-        "Direct operations of the City’s indoor and outdoor pools, fitness classes, and special events.",
-        "Supervise full-time, part-time, and seasonal staff; recruit, train, schedule, and evaluate personnel.",
-        "Plan, market, and execute year-round community events, including Trunk or Treat, Holiday Markets, Breakfast with Santa, Dive-In Movies, and a Labor Day Pickleball Tournament.",
-        "Lead public relations, email and print marketing, RecDesk registration, and vendor coordination.",
-        "Monitor revenues and expenditures; process invoices and P-card reconciliations in Munis.",
-        "Oversee pool filtration, water chemistry, HVAC, and equipment to meet health and safety standards.",
-        "Red Cross Lifeguard and WSI Instructor Trainer; certify staff in Lifeguarding, First Aid, and CPR."
-      ]
-    },
-    {
-      "title": "Team XO, Observer Coach/Trainer (OC/T), Captain",
-      "company": "2-383",
-      "location": "",
-      "start": "2025-10",
-      "end": "",
-      "highlights": [
-        "Second-in-command of an OC/T team that coaches and trains Army Reserve units in collective training.",
-        "Lead After Action Reviews with unit leaders, assessing performance against Army doctrine and standards.",
-        "Coordinate team personnel, logistics, scheduling, and administrative requirements for exercise execution.",
-        "Mentor company-level leaders on sustainment operations, mission planning, and troop leading procedures."
+        "Planned, marketed, and ran 15 community events a year, including Touch-A-Truck, the Easter Festival and Egg Hunt, Daddy and Me Sweetheart Tea, Superhero Dance, Family and Adult (21+) Dive-In Movies, Doggie Splash, Trunk or Treat (now Haunted Depot), the Mayor’s Holiday Lighted Parade and Tree Lighting, and Breakfast with Santa.",
+        "Managed at least one, and often several, ongoing contractor agreements for nearly every special event.",
+        "Coordinated 45 vendors at each of the summer and November holiday flea markets.",
+        "Oversaw the recreation and fitness class schedule, including Toddler Time, three Aquacise classes, Water Walking, PiYo, Karate, Dance, Harp, and Dog Obedience.",
+        "Marketed every event and class: monthly emails to 1,600 subscribers, flyers designed and distributed in person, RecDesk registration, and public relations.",
+        "Monitored revenues and expenditures, processed invoices, and reconciled weekly P-card purchases in Munis for myself and a full-time staff member.",
+        "Supervised 1 full-time employee and 62 part-time seasonal staff, from recruiting and training to scheduling and evaluations."
       ]
     },
     {
       "title": "Company Commander, Captain",
-      "company": "842nd Quartermaster Company",
-      "location": "",
+      "company": "842nd Quartermaster Company, U.S. Army Reserve",
+      "location": "Tonganoxie, KS",
       "start": "2023-04",
       "end": "2025-10",
+      "hours": "20",
       "highlights": [
-        "Led 79 soldiers across 4 platoons in a company responsible for transporting and distributing 1.5 million gallons of fuel.",
-        "Accountable for $20 million in unit equipment.",
-        "Planned and executed missions for current and future fiscal years, up to 3 years out.",
-        "Responsible for training and discipline within the unit, leading by example.",
-        "Made critical decisions that impacted higher and lower echelons.",
-        "Graduated from the Army Logistics University and completed the Quartermaster Basic Officer Leadership Course.",
-        "Oversaw 6 full-time staff leading personnel, training, operations, maintenance, and supply."
+        "Planned and executed missions across current and future fiscal years, up to three years out.",
+        "Led 79 soldiers in four platoons responsible for transporting and distributing 1.5 million gallons of fuel.",
+        "Maintained accountability for $20 million in unit equipment.",
+        "Directed 6 full-time staff across personnel, training, operations, maintenance, and supply."
+      ]
+    },
+    {
+      "title": "Executive Officer, First Lieutenant",
+      "company": "842nd Quartermaster Company, U.S. Army Reserve",
+      "location": "Tonganoxie, KS",
+      "start": "2022-04",
+      "end": "2023-04",
+      "hours": "20",
+      "highlights": [
+        "Managed administration, maintenance, logistics, supply, and personnel for 79 soldiers and 103 vehicles.",
+        "Synchronized the work of 6 full-time staff across personnel, training, operations, maintenance, and supply.",
+        "Advised the Company Commander on training, readiness, and daily operations."
       ]
     },
     {
@@ -57,28 +70,25 @@
       "location": "Leavenworth, KS",
       "start": "2020-05",
       "end": "2025-02",
+      "hours": "40+",
       "highlights": [
-        "Served as Lifeguard, Head Lifeguard, Lifeguard Assistant Manager, Swim Instructor, Lifeguard Instructor, Water Safety Instructor Trainer, and lead recruiter.",
-        "Oversaw more than 60 staff, including lifeguards, head lifeguards, assistant managers, security, and cashiers.",
-        "Built the weekly staff schedule and delivered staff performance reviews.",
-        "Maintained pool records, filtration systems, and water chemistry through regular testing, recording, and adjustment to meet standards; monitored the HVAC system.",
-        "Recruited, trained to Red Cross standards, and hired more than 50 lifeguards.",
-        "Oversaw the City of Leavenworth’s Red Cross Learn-to-Swim program, which served an estimated 200+ children.",
-        "Coordinated with HR to deliver yearly sexual harassment training to all aquatic personnel.",
-        "Coordinated with the Police Department to conduct a yearly active shooter drill for all aquatic personnel."
+        "Managed 62 part-time seasonal staff across lifeguard, head lifeguard, assistant manager, security, and cashier roles; recruited, trained, and hired most of them.",
+        "Oversaw the City’s Red Cross Learn-to-Swim program, serving an estimated 200+ children: 64 swim lessons each summer and more than 25 each fall, winter, and spring.",
+        "Taught 2 to 3 American Red Cross Lifeguarding courses a year, plus Water Safety Instructor courses.",
+        "Built weekly staff schedules and conducted staff performance reviews.",
+        "Coordinated yearly sexual harassment training with HR, and a yearly active shooter drill with the Police Department, for all aquatic personnel."
       ]
     },
     {
-      "title": "Executive Officer, First Lieutenant",
-      "company": "842nd Quartermaster Company",
-      "location": "",
-      "start": "2022-04",
-      "end": "2023-04",
+      "title": "Assistant Aquatic Manager",
+      "company": "City of Leavenworth",
+      "location": "Leavenworth, KS",
+      "start": "2017",
+      "end": "2020",
+      "hours": "40+",
       "highlights": [
-        "Planned and executed missions for current and future fiscal years, up to 3 years out.",
-        "Managed the unit’s administration, maintenance, logistics, supply, and personnel for 79 soldiers and 103 vehicles.",
-        "Coordinated 6 full-time staff leading the personnel, training, operations, maintenance, and supply departments.",
-        "Served as primary advisor to the Company Commander on training, readiness, and day-to-day operations."
+        "Served as acting Aquatic Manager for 2 months in 2018.",
+        "Earlier City roles: Head Lifeguard (2015–2017) and Lifeguard (2013–2015)."
       ]
     }
   ],
@@ -86,22 +96,31 @@
     {
       "school": "University of Kansas",
       "credential": "Bachelor of General Studies, Organizational Communications (minor in Business)",
-      "end": "2020-05"
-    }
+      "end": "2020-05",
+      "kind": "civilian"
+    },
+    { "school": "Army Logistics University", "credential": "Logistics Captains Career Course", "end": "", "kind": "military" },
+    { "school": "U.S. Army", "credential": "Observer Coach/Trainer (OC/T) Academy", "end": "", "kind": "military" },
+    { "school": "U.S. Army", "credential": "Quartermaster Basic Officer Leadership Course", "end": "", "kind": "military" }
   ],
   "certifications": [
-    { "name": "Lifeguarding", "issuer": "", "date": "" },
-    { "name": "Water Safety Instructor", "issuer": "", "date": "" },
-    { "name": "Water Safety Instructor Trainer", "issuer": "", "date": "" },
-    { "name": "Lifeguard Instructor", "issuer": "", "date": "" },
+    { "name": "CPR/First Aid", "issuer": "American Red Cross", "date": "" },
+    { "name": "Lifeguarding", "issuer": "American Red Cross", "date": "" },
+    { "name": "Lifeguard Instructor", "issuer": "American Red Cross", "date": "" },
+    { "name": "Water Safety Instructor", "issuer": "American Red Cross", "date": "" },
+    { "name": "Water Safety Instructor Trainer", "issuer": "American Red Cross", "date": "" },
     { "name": "Aquatic Facility Operator (AFO)", "issuer": "", "date": "" }
+  ],
+  "honors": [
+    { "name": "Outstanding Aquatic Branch Professional", "issuer": "Kansas Recreation & Park Association (KRPA)", "date": "2025", "detail": "" },
+    { "name": "Employee of the Quarter (2nd quarter)", "issuer": "City of Leavenworth", "date": "2022", "detail": "" },
+    { "name": "Eagle Scout", "issuer": "Boy Scouts of America", "date": "2016", "detail": "Planned and led 15 volunteers in a 10-hour project repainting the City of Leavenworth skate park." }
   ],
   "skills": [
     { "group": "Leadership", "items": ["Staff supervision", "Recruiting and hiring", "Training and certification", "Scheduling", "Performance reviews", "Mentoring", "After Action Reviews"] },
-    { "group": "Operations and Planning", "items": ["Event planning", "Mission planning", "Logistics", "Budget and expense monitoring", "Vendor coordination", "Equipment accountability"] },
-    { "group": "Aquatics and Safety", "items": ["Pool filtration and water chemistry", "HVAC monitoring", "Lifeguard and swim instruction", "First Aid and CPR certification", "Learn-to-Swim programs", "Safety drills"] },
+    { "group": "Operations and Planning", "items": ["Event planning", "Mission planning", "Logistics", "Budget and expense monitoring", "Contractor and vendor coordination", "Equipment accountability"] },
     { "group": "Communications", "items": ["Public relations", "Email and print marketing", "Organizational communications"] },
-    { "group": "Software", "items": ["RecDesk", "Munis"] }
+    { "group": "Software", "items": ["Microsoft Word", "Microsoft Excel", "Adobe Acrobat", "Adobe Express", "Adobe Creative Cloud", "Adobe Photoshop (basic)", "Defense Travel System (DTS)", "IPPS-A", "Munis", "RecDesk"] }
   ],
   "_examples": {
     "links": [{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/..." }],
@@ -116,8 +135,9 @@
         "highlights": ["One line on what he did and what came of it."]
       }
     ],
-    "education": [{ "school": "School", "credential": "Degree or program", "end": "2018" }],
+    "education": [{ "school": "School", "credential": "Degree or program", "end": "2018", "kind": "civilian (or military)" }],
     "certifications": [{ "name": "Certification", "issuer": "Issuer", "date": "2023-04" }],
+    "honors": [{ "name": "Award or honor", "issuer": "Who gave it", "date": "2024", "detail": "Optional one line on what it was for." }],
     "skills": [{ "group": "Group name", "items": ["Skill", "Skill"] }]
   }
 }

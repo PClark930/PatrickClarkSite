@@ -1,6 +1,9 @@
 {
   "_note": "The format of private.json: details for the PDFs you send, never for the public site. The real file is private/private.json on your computer (never committed) or private.json in your private repo. Only `npm run pdf` reads it. Every field is optional; delete the ones you don't use.",
   "phone": "(555) 555-0100",
+  "email": "name@example.com (shown on the private PDFs only; resume.json's email, if any, is used otherwise)",
   "address": "Street, City, ST 00000 (replaces the city and state on the PDFs; leave it out to keep just the city)",
-  "federalDetails": ["Lines shown under your contact details on the federal version only, like citizenship or veterans' preference"]
+  "details": ["Lines shown under your contact details on every private PDF, like a security clearance"],
+  "federalDetails": ["Lines shown under your contact details on the federal version only, like citizenship or veterans' preference"],
+  "supervisors": { "Job title exactly as in resume.json": "Name, phone; may contact: Yes (federal version only)" }
 }
