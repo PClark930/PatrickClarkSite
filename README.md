@@ -7,6 +7,7 @@ Open this folder in Claude Code. `CLAUDE.md` tells Claude how this repo works; y
 
 - **Adding your resume or other documents:** put the files in `private/inbox/` and tell Claude ("I added my resume"). It shows you what it plans to put on the site and asks before anything is published. `private/` is never uploaded. This repo is **public**, so originals stay on your computer.
 - **Changing the site:** describe what you want. Claude makes the change and has you look at it locally before saving it.
+- **A resume PDF to apply with** (Indeed, USAJOBS, one job posting): ask Claude, from your computer or your phone. The public site has a PDF without your phone number. The copies with it, a federal version for USAJOBS, and versions aimed at one posting come from your private repo (PatrickClarkPrivate), so your phone number never goes in this public one.
 - **Snags along the way** go to Mitch's Website Playbook as suggestions, for Mitch to review.
 
 ## Run it locally

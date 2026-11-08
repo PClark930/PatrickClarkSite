@@ -63,6 +63,7 @@ jobs:
           }
           expect 200 "$url/"
           expect 200 "$url/resume/"
+          expect 200 "$url/$(node -p "require('./scripts/versions.js').loadVersions()[0].file").pdf"
           expect 301 "${url/https:\/\//https://www.}/"
           expect 404 "$url/.ftp-deploy-sync-state.json"
           exit $fail

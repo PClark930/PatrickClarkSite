@@ -2,11 +2,26 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { assertResume } = require("./scripts/check-resume.js");
+const { loadVersions, loadPrivate } = require("./scripts/versions.js");
+
+// Set only by `npm run pdf` (scripts/resume-pdf.js --private).
+const isPrivate = Boolean(process.env.RESUME_PRIVATE);
 
 module.exports = function (eleventyConfig) {
   // Stop the build when resume.json has a typo the page would quietly drop
   // (an unknown field, a date like "Present"). See scripts/check-resume.js.
   eleventyConfig.on("eleventy.before", assertResume);
+
+  // The PDF versions (src/resume-print.njk), and the private details only the
+  // private build sees: the phone number never reaches the public site.
+  eleventyConfig.addGlobalData("resumeVersions", () => loadVersions({ isPrivate }));
+  eleventyConfig.addGlobalData("privateDetails", () => (isPrivate ? loadPrivate() : {}));
+  eleventyConfig.addWatchTarget("src/_includes/css/");
+
+  // A tailored version can leave out bullets that don't fit one posting.
+  eleventyConfig.addFilter("without", (items, drop) =>
+    Array.isArray(drop) && drop.length ? (items || []).filter((i) => !drop.includes(i)) : items || []
+  );
 
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
