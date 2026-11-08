@@ -1,0 +1,35 @@
+name: Check
+
+# Builds the site the way a deploy does, but uploads nothing. The build checks
+# src/_data/resume.json, then scans the finished pages for phone numbers,
+# stray email addresses and local file paths (scripts/check-*.js).
+# A red X here means `npm run build` stopped; its log says what to fix.
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and check
+        run: npm run build
