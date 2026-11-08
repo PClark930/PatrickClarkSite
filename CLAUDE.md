@@ -34,11 +34,20 @@ Never invent or embellish. Tighten the wording, but every fact (title, date, num
 ## Run it
 Needs [Node.js](https://nodejs.org) 22 or newer.
 - `npm install` once, then `npm start`: the site at http://localhost:8080, reloading as files change.
-- `npm run build` writes the finished site to `_site/` (gitignored). That folder is what gets uploaded.
+- `npm run build` writes the finished site to `_site/` (gitignored), including the public resume PDF. That folder is what gets uploaded.
+- `npm run pdf` writes every resume PDF with his private details to `_pdf/` (gitignored). See "Resume PDFs".
+- The PDFs need Chrome or Edge installed (set `CHROME_PATH` if it's somewhere unusual).
+
+## Resume PDFs
+When Patrick wants his resume as a PDF, is applying somewhere (Indeed, USAJOBS), or wants a version for one posting, use the `resume-pdf` skill (`.claude/skills/resume-pdf/SKILL.md`). In short:
+- Three versions, each two pages at most: **standard**, **federal** (USAJOBS: adds hours per week, needs his phone) and **tailored** (one posting).
+- The public site has only the standard one, without his phone. The copies with his phone are built by his private repo, **PClark930/PatrickClarkPrivate**, which holds his private details (`private.json`) and any tailored version (`tailor.json`). Neither file ever goes in this repo.
+- Facts stay in `src/_data/resume.json`; a tailored version can reword the headline, summary and skills and leave bullets out, but never adds a fact.
 
 ### Checks
 Two checks stop the build with a message saying what to fix. Fix what they point at; don't loosen a check to get past it.
 - **resume.json** (`scripts/check-resume.js`), before every build, `npm start` included: unknown fields (a typo like `"highlight"` would quietly drop a job's bullets), dates the page can't show (`"Present"`, `"April 2023"`), and missing titles or names. If `npm start` stops as soon as it starts, resume.json is already broken: read the message, fix the file, start again.
+- **The resume PDFs** (`scripts/resume-pdf.js`): over two pages, a federal version missing hours per week, a path from the printing computer, or a version name in the PDF's title. `npm run build` only warns, so the site still deploys; `npm run pdf` doesn't write a PDF with a problem.
 - **The finished site** (`scripts/check-site.js`), at the end of `npm run build`: phone numbers, any email address except resume.json's `email`, paths from someone's computer (`C:\Users\...`), and copies of files from `private/`. It says where it found something, never what. If Patrick wants something there on purpose (a phone number, a second email), that's a change to the check: tell him to ask Mitch.
 
 GitHub runs the same build on every push to `dev` and every pull request (`.github/workflows/check.yml`). A red X on a commit means it failed; the log under the Actions tab says why.
@@ -48,13 +57,14 @@ GitHub runs the same build on every push to `dev` and every pull request (`.gith
 |---|---|
 | `src/index.njk` | Home page (a placeholder for now) |
 | `src/resume.njk` → `/resume/` | Resume, built entirely from `src/_data/resume.json`. Empty sections don't show |
+| `src/resume-print.njk` → `/resume/pdf/`, `/resume/federal/` | The pages the PDFs are printed from (not linked, not indexed). Their style is `src/_includes/css/resume-print.css` |
 | `src/_data/resume.json` | Resume content. Its `_examples` key shows the shape of each section |
 | `src/_data/site.json` | Name, description, the live address (`url`), and `preview` |
 | `src/_includes/layouts/base.njk` | The page shell: `<head>`, header and nav |
 | `src/assets/css/style.css` | Styles. The current look is a plain placeholder; the design is Patrick's call |
 | `src/.htaccess`, `src/robots.txt` | Server settings and search-engine rules; copied to the site as is |
-| `private/` | His documents. Gitignored, never committed |
-| `scripts/` | The build checks (see "Checks" above) |
+| `private/` | His documents. Gitignored, never committed, except the two `*.example.json` files that show the format of private.json and tailor.json |
+| `scripts/` | The build checks (see "Checks" above), the resume versions (`versions.js`) and the PDF printer (`resume-pdf.js`) |
 | `.github/workflows/` | `check.yml` builds every push to `dev` and every pull request. `deploy.yml` uploads the site (Mitch's) |
 
 Conventions, same as Mitch's other sites:
