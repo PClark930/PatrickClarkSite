@@ -1,23 +1,24 @@
 name: Build and Deploy
 
-# Hosted on the developer's nfoservers hosting, same setup as The Cafe's and
-# Legacy's sites: build with Eleventy, upload _site/ over FTP.
-#
-# NOT LIVE YET. Until Patrick has something worth publishing, this only runs
-# by hand (Actions tab -> Build and Deploy -> Run workflow). To go live, the
-# FTP_* secrets must be set on the repo (Settings -> Secrets and variables ->
-# Actions), then uncomment the `push` trigger below. Leave that to Mitch.
-#
-# Work happens on `dev`; merging into `main` deploys (once `push` is on).
+# Hosted on Mitch's nfoservers hosting, same setup as The Cafe's and Legacy's
+# sites: build with Eleventy, upload _site/ over FTP (the FTP_* secrets on the
+# repo). Work happens on `dev`; merging into `main` deploys. It can also be run
+# by hand: Actions tab -> Build and Deploy -> Run workflow. Changes to this
+# file are Mitch's.
 on:
-  # push:
-  #   branches:
-  #     - main
-  #   paths-ignore:
-  #     - 'README.md'
-  #     - 'CLAUDE.md'
-  #     - '.claude/**'
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'CLAUDE.md'
+      - '.claude/**'
   workflow_dispatch:
+
+# One deploy at a time; a running upload is never cancelled halfway.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
@@ -49,3 +50,19 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           local-dir: ./_site/
+
+      # A mistake in .htaccess takes the whole site down, so look at the live
+      # site right after uploading. A red X here means check it now.
+      - name: Check the live site
+        run: |
+          url=$(node -p "require('./src/_data/site.json').url")
+          fail=0
+          expect() {
+            got=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$2")
+            if [ "$got" = "$1" ]; then echo "ok    $got  $2"; else echo "FAIL  $got  $2 (expected $1)"; fail=1; fi
+          }
+          expect 200 "$url/"
+          expect 200 "$url/resume/"
+          expect 301 "${url/https:\/\//https://www.}/"
+          expect 404 "$url/.ftp-deploy-sync-state.json"
+          exit $fail

@@ -1,15 +1,58 @@
 # Apache (nfoservers). Eleventy builds each page as folder/index.html.
+# The host already sends http:// to https://; the rules below do the rest.
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 Options -Indexes
 
+# Pages say UTF-8 themselves; this covers the files that can't (CSS, txt, JSON).
+AddDefaultCharset utf-8
+AddCharset utf-8 .css .js .json .txt .xml .svg .webmanifest
+
+# One address: www.patrickclark.cv goes to patrickclark.cv, so links and
+# search results all point the same place.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Files on the server that aren't part of the site get a 404, mainly the FTP
+# deploy's .ftp-deploy-sync-state.json, which lists every uploaded file.
+# .well-known stays open for certificate renewals.
+RedirectMatch 404 /\.(?!well-known/)
+
+# Security headers. None of these change how the site looks or works:
+# - nosniff: files are only treated as the type the server says they are.
+# - Referrer-Policy: other sites see patrickclark.cv, not the full page address.
+# - X-Frame-Options and frame-ancestors: other sites can't show these pages
+#   inside a frame of their own.
+# - Permissions-Policy: the site never asks for the camera, mic or location.
+# - Strict-Transport-Security: browsers use https only, for a year. Leave it
+#   on only while the certificate keeps renewing (it does on this host).
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Content-Security-Policy "frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
+
 # CSS and JS URLs carry a content hash (?v=...), so they can cache for a week.
+# Images aren't hashed, so a replaced image can take up to 30 days to show
+# everywhere: give a new image a new file name. A PDF resume updates within the hour.
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType text/css "access plus 7 days"
   ExpiresByType application/javascript "access plus 7 days"
   ExpiresByType text/javascript "access plus 7 days"
   ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/avif "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
   ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+  ExpiresByType application/pdf "access plus 1 hour"
   ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
