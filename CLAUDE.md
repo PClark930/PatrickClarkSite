@@ -1,6 +1,6 @@
 # PatrickClarkSite: Claude instructions
 
-Personal website for **Patrick Clark**: his resume and, later, his work. Address: **https://patrickclark.cv** (not live yet). Patrick owns this repo and makes changes himself with Claude. **Mitch** (MitchDizzle) set it up and handles hosting and deploys; it follows the same setup as Mitch's other sites (The Cafe's site, Legacy Home Services).
+Personal website for **Patrick Clark**: his resume and, later, his work. Address: **https://patrickclark.cv**, published from `main`. Patrick owns this repo and makes changes himself with Claude. **Mitch** (MitchDizzle) set it up and handles hosting and deploys; it follows the same setup as Mitch's other sites (The Cafe's site, Legacy Home Services).
 
 Built with **Eleventy 3 + Nunjucks**, static, no server.
 
@@ -67,7 +67,9 @@ Conventions, same as Mitch's other sites:
 ## Branches and deploying
 - **`dev` is where work happens.** Commit there. **`main` is what goes live.**
 - Check the branch before committing (`git status -sb`).
-- **The site isn't live yet.** Deploying is set up (`.github/workflows/deploy.yml`, FTP to Mitch's hosting) but runs only by hand until Mitch turns it on. Don't change the workflow, the FTP secrets, or merge into `main` to publish: that's Mitch's step. When Patrick thinks the site is ready, tell him to let Mitch know.
+- **Merging into `main` publishes the site.** `.github/workflows/deploy.yml` builds it, uploads it to Mitch's hosting over FTP, then checks that the live pages load. A red X on that run means look at https://patrickclark.cv right away.
+- Merging into `main` is Mitch's step: don't merge or push to `main`, and don't change the workflows, `src/.htaccess`, or the FTP secrets. When Patrick wants a change published, tell him to let Mitch know.
+- Until launch, `"preview": true` in `site.json` keeps search engines from listing the site even though it's online.
 
 ## The Website Playbook
 Mitch keeps a playbook of how he builds small websites and what went wrong before: **https://github.com/MitchDizzle/WebsitePlaybook**. It's private; Patrick is a collaborator on it.
