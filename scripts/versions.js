@@ -29,7 +29,12 @@ function findPrivateDir() {
   return dirs.find((d) => d && fs.existsSync(path.join(d, "private.json"))) || path.join(root, "private");
 }
 
-const PRIVATE_FIELDS = ["phone", "address", "federalDetails"];
+// email: shown on the private PDFs only (Patrick keeps it off the public site).
+// supervisors: { "<job title exactly as in resume.json>": "Name, phone; may contact: Yes" },
+// printed under that job on the federal version only.
+// details: lines under the contact details on every private PDF (like a clearance);
+// federalDetails: lines added on the federal version only.
+const PRIVATE_FIELDS = ["phone", "email", "address", "details", "federalDetails", "supervisors"];
 const TAILOR_FIELDS = ["base", "file", "headline", "summary", "skills", "drop"];
 
 function unknownKeys(obj, allowed, where) {
@@ -62,14 +67,32 @@ function loadPrivate() {
     throw new Error("No private.json found. Clone the private repo next to this one (../PatrickClarkPrivate), or copy private/private.example.json to private/private.json and fill it in.");
   }
   const problems = unknownKeys(p, PRIVATE_FIELDS, "private.json");
-  for (const k of ["phone", "address"]) {
+  for (const k of ["phone", "email", "address"]) {
     if (p[k] !== undefined && typeof p[k] !== "string") problems.push(`private.json: ${k} should be text in quotes.`);
+  }
+  if (typeof p.email === "string" && p.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.email)) {
+    problems.push(`private.json: email "${p.email}" doesn't look like an email address.`);
+  }
+  if (p.supervisors !== undefined) {
+    if (!p.supervisors || typeof p.supervisors !== "object" || Array.isArray(p.supervisors)) {
+      problems.push('private.json: supervisors should be { "Job title": "Name, phone; may contact: Yes" }.');
+    } else {
+      // A title that matches no job would leave its supervisor off without a word.
+      const titles = new Set((readJson(path.join(root, "src", "_data", "resume.json")).experience || []).map((j) => j.title));
+      for (const [title, line] of Object.entries(p.supervisors)) {
+        if (title.startsWith("_")) continue;
+        if (!titles.has(title)) problems.push(`private.json: supervisors "${title}" doesn't match any job title in resume.json exactly.`);
+        if (typeof line !== "string" || !line.trim()) problems.push(`private.json: supervisors "${title}" should be a line of text in quotes.`);
+      }
+    }
   }
   if (typeof p.phone === "string" && p.phone && !/^[\d\s().+-]{7,}$/.test(p.phone)) {
     problems.push("private.json: phone should be just the number, like (913) 555-0100.");
   }
-  if (p.federalDetails !== undefined && (!Array.isArray(p.federalDetails) || p.federalDetails.some((d) => typeof d !== "string" || !d.trim()))) {
-    problems.push("private.json: federalDetails should be a list of lines in quotes.");
+  for (const k of ["details", "federalDetails"]) {
+    if (p[k] !== undefined && (!Array.isArray(p[k]) || p[k].some((d) => typeof d !== "string" || !d.trim()))) {
+      problems.push(`private.json: ${k} should be a list of lines in quotes.`);
+    }
   }
   fail("private.json", problems);
   return p;

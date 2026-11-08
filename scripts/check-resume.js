@@ -32,6 +32,7 @@ const shape = {
   experience: { title: TEXT, company: TEXT, location: TEXT, start: DATE, end: DATE, hours: TEXT, highlights: LIST },
   education: { school: TEXT, credential: TEXT, end: DATE },
   certifications: { name: TEXT, issuer: TEXT, date: DATE },
+  honors: { name: TEXT, issuer: TEXT, date: DATE, detail: TEXT },
   skills: { group: TEXT, items: LIST },
 };
 // Fields an entry can't go without.
@@ -40,6 +41,7 @@ const required = {
   experience: ["title", "start"],
   education: ["credential"],
   certifications: ["name"],
+  honors: ["name"],
   skills: ["group", "items"],
 };
 
@@ -65,6 +67,7 @@ const aliases = {
   experience: { role: "title", position: "title", job: "title", employer: "company", organization: "company", unit: "company", city: "location", from: "start", to: "end", hoursperweek: "hours", hours_per_week: "hours", bullets: "highlights", duties: "highlights", description: "highlights" },
   education: { degree: "credential", program: "credential", institution: "school", university: "school", date: "end", year: "end", graduated: "end" },
   certifications: { title: "name", organization: "issuer", issued: "date", year: "date" },
+  honors: { title: "name", award: "name", organization: "issuer", year: "date", description: "detail" },
   skills: { name: "group", category: "group", list: "items", skills: "items" },
   links: { name: "label", title: "label", href: "url", link: "url" },
 };
