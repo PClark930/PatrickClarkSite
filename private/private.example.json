@@ -1,0 +1,6 @@
+{
+  "_note": "The format of private.json: details for the PDFs you send, never for the public site. The real file is private/private.json on your computer (never committed) or private.json in your private repo. Only `npm run pdf` reads it. Every field is optional; delete the ones you don't use.",
+  "phone": "(555) 555-0100",
+  "address": "Street, City, ST 00000 (replaces the city and state on the PDFs; leave it out to keep just the city)",
+  "federalDetails": ["Lines shown under your contact details on the federal version only, like citizenship or veterans' preference"]
+}

@@ -17,6 +17,10 @@ permalink: /resume/
       {%- for l in r.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
     </p>
     {%- endif %}
+    {#- Printed by scripts/resume-pdf.js in `npm run build`, so it's missing under `npm start`. #}
+    {%- if r.experience.length %}
+    <p class="pdf-link"><a href="/{{ resumeVersions[0].file }}.pdf">Download PDF</a></p>
+    {%- endif %}
   </header>
 
   {%- if not (r.summary or r.experience.length or r.education.length) %}

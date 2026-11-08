@@ -28,7 +28,8 @@ const shape = {
   email: TEXT,
   summary: TEXT,
   links: { label: TEXT, url: TEXT },
-  experience: { title: TEXT, company: TEXT, location: TEXT, start: DATE, end: DATE, highlights: LIST },
+  // hours: hours per week, printed only on the federal PDF (USAJOBS asks for it).
+  experience: { title: TEXT, company: TEXT, location: TEXT, start: DATE, end: DATE, hours: TEXT, highlights: LIST },
   education: { school: TEXT, credential: TEXT, end: DATE },
   certifications: { name: TEXT, issuer: TEXT, date: DATE },
   skills: { group: TEXT, items: LIST },
@@ -61,7 +62,7 @@ function distance(a, b) {
 
 // Other names people often use for a field.
 const aliases = {
-  experience: { role: "title", position: "title", job: "title", employer: "company", organization: "company", unit: "company", city: "location", from: "start", to: "end", bullets: "highlights", duties: "highlights", description: "highlights" },
+  experience: { role: "title", position: "title", job: "title", employer: "company", organization: "company", unit: "company", city: "location", from: "start", to: "end", hoursperweek: "hours", hours_per_week: "hours", bullets: "highlights", duties: "highlights", description: "highlights" },
   education: { degree: "credential", program: "credential", institution: "school", university: "school", date: "end", year: "end", graduated: "end" },
   certifications: { title: "name", organization: "issuer", issued: "date", year: "date" },
   skills: { name: "group", category: "group", list: "items", skills: "items" },

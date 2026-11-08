@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {#- Same title on every version: Chrome copies it into the PDF's properties,
+      and an employer should never see "Federal" or "Tailored" there. #}
+  <title>{{ site.name }}: Resume</title>
+  <meta name="robots" content="noindex">
+  {#- Self-contained on purpose: the CSS is inline and every link is a full
+      address, so scripts/resume-pdf.js can print the page straight from disk
+      without a local path ending up in the PDF. The web font makes the PDF
+      look the same whichever computer prints it. #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=block">
+  <style>
+{% include "css/resume-print.css" %}
+  </style>
+</head>
+<body>
+<main class="sheet">
+{{ content | safe }}
+</main>
+</body>
+</html>

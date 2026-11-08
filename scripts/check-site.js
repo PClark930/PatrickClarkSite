@@ -95,7 +95,7 @@ function main() {
   // Patrick's original documents live in private/ and must never be uploaded.
   const originals = new Map(
     walk(privateDir)
-      .filter((f) => path.basename(f) !== "README.md")
+      .filter((f) => path.basename(f) !== "README.md" && !f.endsWith(".example.json"))
       .map((f) => [hash(f), path.relative(root, f).split(path.sep).join("/")])
   );
   if (originals.size) {
