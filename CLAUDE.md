@@ -32,9 +32,16 @@ List for him, in plain words, what will appear on the site from the document, an
 Never invent or embellish. Tighten the wording, but every fact (title, date, number, result) must come from his documents or from him. If something's unclear, ask.
 
 ## Run it
-Needs [Node.js](https://nodejs.org) 18 or newer.
+Needs [Node.js](https://nodejs.org) 22 or newer.
 - `npm install` once, then `npm start`: the site at http://localhost:8080, reloading as files change.
 - `npm run build` writes the finished site to `_site/` (gitignored). That folder is what gets uploaded.
+
+### Checks
+Two checks stop the build with a message saying what to fix. Fix what they point at; don't loosen a check to get past it.
+- **resume.json** (`scripts/check-resume.js`), before every build, `npm start` included: unknown fields (a typo like `"highlight"` would quietly drop a job's bullets), dates the page can't show (`"Present"`, `"April 2023"`), and missing titles or names. If `npm start` stops as soon as it starts, resume.json is already broken: read the message, fix the file, start again.
+- **The finished site** (`scripts/check-site.js`), at the end of `npm run build`: phone numbers, any email address except resume.json's `email`, paths from someone's computer (`C:\Users\...`), and copies of files from `private/`. It says where it found something, never what. If Patrick wants something there on purpose (a phone number, a second email), that's a change to the check: tell him to ask Mitch.
+
+GitHub runs the same build on every push to `dev` and every pull request (`.github/workflows/check.yml`). A red X on a commit means it failed; the log under the Actions tab says why.
 
 ## Layout
 | Path | What it is |
@@ -47,6 +54,8 @@ Needs [Node.js](https://nodejs.org) 18 or newer.
 | `src/assets/css/style.css` | Styles. The current look is a plain placeholder; the design is Patrick's call |
 | `src/.htaccess`, `src/robots.txt` | Server settings and search-engine rules; copied to the site as is |
 | `private/` | His documents. Gitignored, never committed |
+| `scripts/` | The build checks (see "Checks" above) |
+| `.github/workflows/` | `check.yml` builds every push to `dev` and every pull request. `deploy.yml` uploads the site (Mitch's) |
 
 Conventions, same as Mitch's other sites:
 - One file per page in `src/`, front matter needs `title` and `description`.

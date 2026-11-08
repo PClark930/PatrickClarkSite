@@ -10,12 +10,14 @@ Open this folder in Claude Code. `CLAUDE.md` tells Claude how this repo works; y
 - **Snags along the way** go to Mitch's Website Playbook as suggestions, for Mitch to review.
 
 ## Run it locally
-Needs [Node.js](https://nodejs.org) 18 or newer.
+Needs [Node.js](https://nodejs.org) 22 or newer.
 ```bash
 npm install
 npm start
 ```
 Open http://localhost:8080. The page reloads when a file is saved. `npm run build` writes the finished site to `_site/`.
+
+Every build checks the resume data for typos, and `npm run build` then checks the finished pages for a phone number, a second email address, or anything from `private/`. If one finds something, the build stops and says what to fix. GitHub runs the same build on every push to `dev`.
 
 ## Going live
 Not live yet. Work happens on `dev`; `main` is what will be published. Hosting and deploys are set up by Mitch (`.github/workflows/deploy.yml`) and switched on when there's something to show.
