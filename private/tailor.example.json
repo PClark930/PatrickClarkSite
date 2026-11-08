@@ -1,0 +1,9 @@
+{
+  "_note": "The format of tailor.json: one extra PDF aimed at a single job posting. It lives next to private.json (never in the public site) and only `npm run pdf` reads it. It starts from a version (`base`) and can change the headline, summary and skills, and leave out bullets. It can't add anything new: every fact still comes from resume.json. Delete the fields you don't use.",
+  "base": "standard",
+  "file": "Patrick_Clark_Resume_Posting",
+  "headline": "A headline worded for this posting",
+  "summary": "A summary worded for this posting, using only facts from resume.json.",
+  "skills": [{ "group": "Group name", "items": ["Skill", "Skill"] }],
+  "drop": ["A bullet copied exactly from resume.json, to leave out of this version"]
+}

@@ -2,10 +2,13 @@
 # originals never get committed, only what he approves for the site.
 private/*
 !private/README.md
+!private/*.example.json
 
 # Eleventy / Node
 node_modules/
 _site/
+# Private resume PDFs and the site copy they're printed from (npm run pdf)
+_pdf/
 .env
 .env.*
 !.env.example

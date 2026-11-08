@@ -1,0 +1,87 @@
+---
+pagination:
+  data: resumeVersions
+  size: 1
+  alias: v
+permalink: "/resume/{{ v.slug }}/index.html"
+layout: layouts/resume-print.njk
+eleventyExcludeFromCollections: true
+---
+{#- One page per PDF version (scripts/versions.js), printed by
+    scripts/resume-pdf.js. Same facts as /resume/, from resume.json.
+    privateDetails is empty except in private builds (`npm run pdf`).
+    Every link must be a full address (https:// or mailto:): a link like
+    "/resume/" would turn into a path on the printing computer. #}
+{%- set r = resume %}
+{%- set p = privateDetails %}
+{%- set headline = v.headline or r.headline %}
+{%- set summary = v.summary or r.summary %}
+{%- set skills = v.skills or r.skills %}
+{%- set contacts = [
+  { text: p.address or r.location },
+  { text: r.email, href: "mailto:" + r.email },
+  { text: p.phone },
+  { text: site.url | replace("https://", ""), href: site.url }
+] | selectattr("text") %}
+<header>
+  <h1>{{ site.name }}</h1>
+  {%- if headline %}<p class="headline">{{ headline }}</p>{% endif %}
+  <p class="contact">
+    {%- for c in contacts %}{% if not loop.first %} | {% endif %}{% if c.href %}<a href="{{ c.href }}">{{ c.text }}</a>{% else %}{{ c.text }}{% endif %}{% endfor %}
+    {%- for l in r.links %} | <a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+  </p>
+  {%- if v.federal and p.federalDetails and p.federalDetails.length %}
+  <p class="details">{{ p.federalDetails | join(" | ") }}</p>
+  {%- endif %}
+</header>
+
+{%- if summary %}
+<h2>Summary</h2>
+<p>{{ summary }}</p>
+{%- endif %}
+
+{%- if r.experience.length %}
+<h2>Experience</h2>
+{%- for job in r.experience %}
+{%- set bullets = job.highlights | without(v.drop) %}
+<section class="job">
+  <div class="job-head">
+    <h3>{{ job.title }}{% if job.company %}, {{ job.company }}{% endif %}</h3>
+    <span class="dates">{{ job.start | monthYear }} to {{ job.end | monthYear }}</span>
+  </div>
+  {%- set hours = job.hours if v.federal else "" %}
+  {%- if job.location or hours %}
+  <p class="job-line">{{ job.location }}{% if job.location and hours %} | {% endif %}{% if hours %}Hours per week: {{ hours }}{% endif %}</p>
+  {%- endif %}
+  {%- if bullets.length %}
+  <ul>{% for h in bullets %}<li>{{ h }}</li>{% endfor %}</ul>
+  {%- endif %}
+</section>
+{%- endfor %}
+{%- endif %}
+
+{%- if r.education.length %}
+<h2>Education</h2>
+{%- for e in r.education %}
+<div class="job-head">
+  <h3>{{ e.credential }}{% if e.school %}, {{ e.school }}{% endif %}</h3>
+  {%- if e.end %}<span class="dates">{{ e.end | monthYear }}</span>{% endif %}
+</div>
+{%- endfor %}
+{%- endif %}
+
+{%- if r.certifications.length %}
+<h2>Certifications</h2>
+<ul class="list">
+  {%- for c in r.certifications %}
+  <li>{{ c.name }}{% if c.issuer %}, {{ c.issuer }}{% endif %}{% if c.date %} ({{ c.date | monthYear }}){% endif %}</li>
+  {%- endfor %}
+</ul>
+{%- endif %}
+
+{%- if skills.length %}
+<h2>Skills</h2>
+{%- for s in skills %}
+<p><strong>{{ s.group }}:</strong> {{ s.items | join(", ") }}</p>
+{%- endfor %}
+{%- endif %}

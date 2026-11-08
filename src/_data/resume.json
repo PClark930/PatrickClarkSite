@@ -1,14 +1,108 @@
 {
   "_note": "Everything here is published on a PUBLIC site and stays in the repo's history forever. Only what Patrick has approved goes in. Filled from his documents in private/ (see CLAUDE.md, 'Documents'). Dates are \"YYYY-MM\" or \"YYYY\"; an empty end means Present. Remove a section by leaving its list empty.",
-  "headline": "",
-  "location": "",
-  "email": "",
+  "headline": "Recreation Supervisor · Army Captain",
+  "location": "Leavenworth, KS",
+  "email": "pclark7985@gmail.com",
   "links": [],
-  "summary": "",
-  "experience": [],
-  "education": [],
-  "certifications": [],
-  "skills": [],
+  "summary": "Recreation Supervisor with the City of Leavenworth since 2013 and an Army Captain, leading teams as large as 60+ staff and 79 soldiers. I direct aquatics, fitness programs, and year-round community events, covering staffing, training, budgets, marketing, and facility operations. In the Army I've commanded a fuel distribution company accountable for $20 million in equipment, and I now coach and evaluate Army Reserve units in training. I bring the same planning, discipline, and standards to public service.",
+  "experience": [
+    {
+      "title": "Recreation Supervisor",
+      "company": "City of Leavenworth",
+      "location": "Leavenworth, KS",
+      "start": "2025-02",
+      "end": "",
+      "highlights": [
+        "Direct operations of the City’s indoor and outdoor pools, fitness classes, and special events.",
+        "Supervise full-time, part-time, and seasonal staff; recruit, train, schedule, and evaluate personnel.",
+        "Plan, market, and execute year-round community events, including Trunk or Treat, Holiday Markets, Breakfast with Santa, Dive-In Movies, and a Labor Day Pickleball Tournament.",
+        "Lead public relations, email and print marketing, RecDesk registration, and vendor coordination.",
+        "Monitor revenues and expenditures; process invoices and P-card reconciliations in Munis.",
+        "Oversee pool filtration, water chemistry, HVAC, and equipment to meet health and safety standards.",
+        "Red Cross Lifeguard and WSI Instructor Trainer; certify staff in Lifeguarding, First Aid, and CPR."
+      ]
+    },
+    {
+      "title": "Team XO, Observer Coach/Trainer (OC/T), Captain",
+      "company": "2-383",
+      "location": "",
+      "start": "2025-10",
+      "end": "",
+      "highlights": [
+        "Second-in-command of an OC/T team that coaches and trains Army Reserve units in collective training.",
+        "Lead After Action Reviews with unit leaders, assessing performance against Army doctrine and standards.",
+        "Coordinate team personnel, logistics, scheduling, and administrative requirements for exercise execution.",
+        "Mentor company-level leaders on sustainment operations, mission planning, and troop leading procedures."
+      ]
+    },
+    {
+      "title": "Company Commander, Captain",
+      "company": "842nd Quartermaster Company",
+      "location": "",
+      "start": "2023-04",
+      "end": "2025-10",
+      "highlights": [
+        "Led 79 soldiers across 4 platoons in a company responsible for transporting and distributing 1.5 million gallons of fuel.",
+        "Accountable for $20 million in unit equipment.",
+        "Planned and executed missions for current and future fiscal years, up to 3 years out.",
+        "Responsible for training and discipline within the unit, leading by example.",
+        "Made critical decisions that impacted higher and lower echelons.",
+        "Graduated from the Army Logistics University and completed the Quartermaster Basic Officer Leadership Course.",
+        "Oversaw 6 full-time staff leading personnel, training, operations, maintenance, and supply."
+      ]
+    },
+    {
+      "title": "Aquatic Manager",
+      "company": "City of Leavenworth",
+      "location": "Leavenworth, KS",
+      "start": "2020-05",
+      "end": "2025-02",
+      "highlights": [
+        "Served as Lifeguard, Head Lifeguard, Lifeguard Assistant Manager, Swim Instructor, Lifeguard Instructor, Water Safety Instructor Trainer, and lead recruiter.",
+        "Oversaw more than 60 staff, including lifeguards, head lifeguards, assistant managers, security, and cashiers.",
+        "Built the weekly staff schedule and delivered staff performance reviews.",
+        "Maintained pool records, filtration systems, and water chemistry through regular testing, recording, and adjustment to meet standards; monitored the HVAC system.",
+        "Recruited, trained to Red Cross standards, and hired more than 50 lifeguards.",
+        "Oversaw the City of Leavenworth’s Red Cross Learn-to-Swim program, which served an estimated 200+ children.",
+        "Coordinated with HR to deliver yearly sexual harassment training to all aquatic personnel.",
+        "Coordinated with the Police Department to conduct a yearly active shooter drill for all aquatic personnel."
+      ]
+    },
+    {
+      "title": "Executive Officer, First Lieutenant",
+      "company": "842nd Quartermaster Company",
+      "location": "",
+      "start": "2022-04",
+      "end": "2023-04",
+      "highlights": [
+        "Planned and executed missions for current and future fiscal years, up to 3 years out.",
+        "Managed the unit’s administration, maintenance, logistics, supply, and personnel for 79 soldiers and 103 vehicles.",
+        "Coordinated 6 full-time staff leading the personnel, training, operations, maintenance, and supply departments.",
+        "Served as primary advisor to the Company Commander on training, readiness, and day-to-day operations."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "University of Kansas",
+      "credential": "Bachelor of General Studies, Organizational Communications (minor in Business)",
+      "end": "2020-05"
+    }
+  ],
+  "certifications": [
+    { "name": "Lifeguarding", "issuer": "", "date": "" },
+    { "name": "Water Safety Instructor", "issuer": "", "date": "" },
+    { "name": "Water Safety Instructor Trainer", "issuer": "", "date": "" },
+    { "name": "Lifeguard Instructor", "issuer": "", "date": "" },
+    { "name": "Aquatic Facility Operator (AFO)", "issuer": "", "date": "" }
+  ],
+  "skills": [
+    { "group": "Leadership", "items": ["Staff supervision", "Recruiting and hiring", "Training and certification", "Scheduling", "Performance reviews", "Mentoring", "After Action Reviews"] },
+    { "group": "Operations and Planning", "items": ["Event planning", "Mission planning", "Logistics", "Budget and expense monitoring", "Vendor coordination", "Equipment accountability"] },
+    { "group": "Aquatics and Safety", "items": ["Pool filtration and water chemistry", "HVAC monitoring", "Lifeguard and swim instruction", "First Aid and CPR certification", "Learn-to-Swim programs", "Safety drills"] },
+    { "group": "Communications", "items": ["Public relations", "Email and print marketing", "Organizational communications"] },
+    { "group": "Software", "items": ["RecDesk", "Munis"] }
+  ],
   "_examples": {
     "links": [{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/..." }],
     "experience": [
@@ -18,6 +112,7 @@
         "location": "City, ST",
         "start": "2021-06",
         "end": "",
+        "hours": "40 (hours per week; shown only on the federal PDF)",
         "highlights": ["One line on what he did and what came of it."]
       }
     ],

@@ -1,6 +1,6 @@
 # PatrickClarkSite: Claude instructions
 
-Personal website for **Patrick Clark**: his resume and, later, his work. Address: **https://patrickclark.cv** (not live yet). Patrick owns this repo and makes changes himself with Claude. **Mitch** (MitchDizzle) set it up and handles hosting and deploys; it follows the same setup as Mitch's other sites (The Cafe's site, Legacy Home Services).
+Personal website for **Patrick Clark**: his resume and, later, his work. Address: **https://patrickclark.cv**, published from `main`. Patrick owns this repo and makes changes himself with Claude. **Mitch** (MitchDizzle) set it up and handles hosting and deploys; it follows the same setup as Mitch's other sites (The Cafe's site, Legacy Home Services).
 
 Built with **Eleventy 3 + Nunjucks**, static, no server.
 
@@ -32,21 +32,40 @@ List for him, in plain words, what will appear on the site from the document, an
 Never invent or embellish. Tighten the wording, but every fact (title, date, number, result) must come from his documents or from him. If something's unclear, ask.
 
 ## Run it
-Needs [Node.js](https://nodejs.org) 18 or newer.
+Needs [Node.js](https://nodejs.org) 22 or newer.
 - `npm install` once, then `npm start`: the site at http://localhost:8080, reloading as files change.
-- `npm run build` writes the finished site to `_site/` (gitignored). That folder is what gets uploaded.
+- `npm run build` writes the finished site to `_site/` (gitignored), including the public resume PDF. That folder is what gets uploaded.
+- `npm run pdf` writes every resume PDF with his private details to `_pdf/` (gitignored). See "Resume PDFs".
+- The PDFs need Chrome or Edge installed (set `CHROME_PATH` if it's somewhere unusual).
+
+## Resume PDFs
+When Patrick wants his resume as a PDF, is applying somewhere (Indeed, USAJOBS), or wants a version for one posting, use the `resume-pdf` skill (`.claude/skills/resume-pdf/SKILL.md`). In short:
+- Three versions, each two pages at most: **standard**, **federal** (USAJOBS: adds hours per week, needs his phone) and **tailored** (one posting).
+- The public site has only the standard one, without his phone. The copies with his phone are built by his private repo, **PClark930/PatrickClarkPrivate**, which holds his private details (`private.json`) and any tailored version (`tailor.json`). Neither file ever goes in this repo.
+- Facts stay in `src/_data/resume.json`; a tailored version can reword the headline, summary and skills and leave bullets out, but never adds a fact.
+
+### Checks
+Two checks stop the build with a message saying what to fix. Fix what they point at; don't loosen a check to get past it.
+- **resume.json** (`scripts/check-resume.js`), before every build, `npm start` included: unknown fields (a typo like `"highlight"` would quietly drop a job's bullets), dates the page can't show (`"Present"`, `"April 2023"`), and missing titles or names. If `npm start` stops as soon as it starts, resume.json is already broken: read the message, fix the file, start again.
+- **The resume PDFs** (`scripts/resume-pdf.js`): over two pages, a federal version missing hours per week, a path from the printing computer, or a version name in the PDF's title. `npm run build` only warns, so the site still deploys; `npm run pdf` doesn't write a PDF with a problem.
+- **The finished site** (`scripts/check-site.js`), at the end of `npm run build`: phone numbers, any email address except resume.json's `email`, paths from someone's computer (`C:\Users\...`), and copies of files from `private/`. It says where it found something, never what. If Patrick wants something there on purpose (a phone number, a second email), that's a change to the check: tell him to ask Mitch.
+
+GitHub runs the same build on every push to `dev` and every pull request (`.github/workflows/check.yml`). A red X on a commit means it failed; the log under the Actions tab says why.
 
 ## Layout
 | Path | What it is |
 |---|---|
 | `src/index.njk` | Home page (a placeholder for now) |
 | `src/resume.njk` → `/resume/` | Resume, built entirely from `src/_data/resume.json`. Empty sections don't show |
+| `src/resume-print.njk` → `/resume/pdf/`, `/resume/federal/` | The pages the PDFs are printed from (not linked, not indexed). Their style is `src/_includes/css/resume-print.css` |
 | `src/_data/resume.json` | Resume content. Its `_examples` key shows the shape of each section |
 | `src/_data/site.json` | Name, description, the live address (`url`), and `preview` |
 | `src/_includes/layouts/base.njk` | The page shell: `<head>`, header and nav |
 | `src/assets/css/style.css` | Styles. The current look is a plain placeholder; the design is Patrick's call |
 | `src/.htaccess`, `src/robots.txt` | Server settings and search-engine rules; copied to the site as is |
-| `private/` | His documents. Gitignored, never committed |
+| `private/` | His documents. Gitignored, never committed, except the two `*.example.json` files that show the format of private.json and tailor.json |
+| `scripts/` | The build checks (see "Checks" above), the resume versions (`versions.js`) and the PDF printer (`resume-pdf.js`) |
+| `.github/workflows/` | `check.yml` builds every push to `dev` and every pull request. `deploy.yml` uploads the site (Mitch's) |
 
 Conventions, same as Mitch's other sites:
 - One file per page in `src/`, front matter needs `title` and `description`.
@@ -58,7 +77,9 @@ Conventions, same as Mitch's other sites:
 ## Branches and deploying
 - **`dev` is where work happens.** Commit there. **`main` is what goes live.**
 - Check the branch before committing (`git status -sb`).
-- **The site isn't live yet.** Deploying is set up (`.github/workflows/deploy.yml`, FTP to Mitch's hosting) but runs only by hand until Mitch turns it on. Don't change the workflow, the FTP secrets, or merge into `main` to publish: that's Mitch's step. When Patrick thinks the site is ready, tell him to let Mitch know.
+- **Merging into `main` publishes the site.** `.github/workflows/deploy.yml` builds it, uploads it to Mitch's hosting over FTP, then checks that the live pages load. A red X on that run means look at https://patrickclark.cv right away.
+- Merging into `main` is Mitch's step: don't merge or push to `main`, and don't change the workflows, `src/.htaccess`, or the FTP secrets. When Patrick wants a change published, tell him to let Mitch know.
+- Until launch, `"preview": true` in `site.json` keeps search engines from listing the site even though it's online.
 
 ## The Website Playbook
 Mitch keeps a playbook of how he builds small websites and what went wrong before: **https://github.com/MitchDizzle/WebsitePlaybook**. It's private; Patrick is a collaborator on it.
