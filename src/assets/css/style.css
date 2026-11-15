@@ -75,13 +75,7 @@ a:hover { text-decoration-color: currentColor; }
   color: var(--text);
   text-decoration: none;
 }
-.brand::before {
-  content: "";
-  width: .6rem;
-  height: 1.35rem;
-  border-radius: 2px;
-  background: var(--brand);
-}
+.brand img { display: block; width: 1.9rem; height: 1.9rem; }
 .site-header nav a {
   margin-left: 1.25rem;
   font-weight: 600;
