@@ -1,0 +1,33 @@
+---
+title: Photos
+description: "Photos from Patrick Clark's Army Reserve service: Chinook refueling missions, flights, and his change of command."
+layout: layouts/base.njk
+permalink: /photos/
+---
+{#- Built from src/_data/photos.json. The web copies in /assets/img/photos/ are
+    made by scripts/make-photos.ps1 from originals kept in private/. #}
+<article class="photos">
+  <h1>Photos</h1>
+  {%- if photos.intro %}
+  <p class="lede">{{ photos.intro }}</p>
+  {%- endif %}
+  {%- for group in photos.groups %}
+  <section aria-labelledby="photos-{{ loop.index }}">
+    <h2 id="photos-{{ loop.index }}">{{ group.title }}</h2>
+    <ul class="photo-grid">
+      {%- for p in group.photos %}
+      <li>
+        <figure>
+          <a href="/assets/img/photos/{{ p.file }}-1600.jpg">
+            <img src="/assets/img/photos/{{ p.file }}-800.jpg" alt="{{ p.alt }}" loading="lazy" decoding="async">
+          </a>
+          {%- if p.caption %}
+          <figcaption>{{ p.caption }}</figcaption>
+          {%- endif %}
+        </figure>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endfor %}
+</article>

@@ -1,0 +1,81 @@
+{
+  "_about": "The Photos page (/photos/). Each photo's original is private/documents/photos/<file>.jpg (never uploaded). After adding or changing one here, run: powershell -File scripts/make-photos.ps1 to make the web copies. Captions are Patrick's facts only.",
+  "intro": "Moments from my Army Reserve service.",
+  "groups": [
+    {
+      "title": "In the air",
+      "photos": [
+        {
+          "file": "ramp-in-flight-kneeling",
+          "alt": "A crew member in a flight helmet kneels on the open rear ramp of a Chinook helicopter in flight, looking out over green farmland.",
+          "caption": "On the open ramp of a CH-47 Chinook in flight."
+        },
+        {
+          "file": "ramp-in-flight-river",
+          "alt": "A crew member sits on the open rear ramp of a Chinook in flight, with fields and a winding river far below.",
+          "caption": "The view from the back of a Chinook."
+        }
+      ]
+    },
+    {
+      "title": "Refueling Chinooks",
+      "photos": [
+        {
+          "file": "refuel-hose-from-behind",
+          "alt": "Three soldiers seen from behind connect a black fuel hose to the side of a parked Chinook in a grassy field.",
+          "caption": "Connecting the fuel hose to a Chinook."
+        },
+        {
+          "file": "refuel-hose-crew",
+          "alt": "Two soldiers hold a fuel hose running into a parked Chinook while a crew member in a flight helmet stands nearby.",
+          "caption": "Fuel handlers and aircrew at work."
+        },
+        {
+          "file": "chinook-field-team",
+          "alt": "A Chinook sits in an open field on an overcast day while a group of soldiers stands beside a fuel hose and fire extinguisher.",
+          "caption": "Getting ready to refuel in the field."
+        },
+        {
+          "file": "chinook-briefing",
+          "alt": "A soldier talks to a group gathered at the open rear ramp of a Chinook in a field of tall dry grass.",
+          "caption": "A briefing at the back of the aircraft."
+        },
+        {
+          "file": "chinook-flight-line",
+          "alt": "A Chinook parked on a sunny flight line with a fuel panel open on its side.",
+          "caption": "A Chinook on the flight line."
+        }
+      ]
+    },
+    {
+      "title": "Change of command",
+      "photos": [
+        {
+          "file": "change-of-command-salute",
+          "alt": "Patrick Clark salutes an officer during a ceremony while a soldier holds the unit flag and a formation stands behind them.",
+          "caption": "Change of command ceremony."
+        },
+        {
+          "file": "change-of-command-standing",
+          "alt": "Patrick Clark stands at attention facing an officer while a soldier holds the unit flag beside him.",
+          "caption": "Taking command."
+        },
+        {
+          "file": "change-of-command-handshake",
+          "alt": "Patrick Clark shakes hands with a soldier in front of the formation after the ceremony.",
+          "caption": "Thanking the soldiers afterward."
+        }
+      ]
+    },
+    {
+      "title": "Field training",
+      "photos": [
+        {
+          "file": "field-training-table",
+          "alt": "Soldiers gather around a folding table in a pine forest camp with green tents behind them, looking at items laid out on the table.",
+          "caption": "Training in the field."
+        }
+      ]
+    }
+  ]
+}

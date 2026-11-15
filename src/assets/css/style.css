@@ -296,6 +296,22 @@ section > h2 + .edu-group { margin-top: 0; }
 .resume section > ul li { margin: .25rem 0; }
 .resume section > p { margin: .35rem 0; }
 
+/* Photos page */
+.photos section { margin-top: 2.5rem; }
+.photo-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+.photo-grid figure { margin: 0; }
+.photo-grid a { display: block; border-radius: var(--radius); overflow: hidden; }
+.photo-grid img { display: block; width: 100%; height: auto; }
+.photo-grid figcaption { margin-top: .5rem; font-size: .95rem; color: var(--muted); }
+
 /* Text pages (privacy and disclaimer) */
 .prose { max-width: 42rem; }
 .prose ul { padding-left: 1.15rem; }
