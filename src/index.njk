@@ -29,6 +29,12 @@ fullBleed: true
     </p>
     {%- endif %}
   </div>
+  {#- The gentle swell along the bottom (a nod to his years in aquatics). Its fill
+      matches the band below: the Highlights tint, or the page if there are none. #}
+  <svg class="band-wave{% if not highlights.stats.length %} on-page{% endif %}" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path class="band-wave-fill" d="M0 30C240 8 480 12 720 30S1200 54 1440 24V48H0Z"/>
+    <path class="band-wave-line" d="M0 30C240 8 480 12 720 30S1200 54 1440 24" vector-effect="non-scaling-stroke"/>
+  </svg>
 </section>
 
 {%- if highlights.stats.length %}

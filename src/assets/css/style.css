@@ -34,7 +34,7 @@
     --brand-soft: #1d2b37;
     --tint: #181c20;
   }
-  :root .band { --band: #22262a; border-bottom-color: #4f86b3; }
+  :root .band { --band: #22262a; --wave: #4f86b3; }
 }
 
 * { box-sizing: border-box; }
@@ -138,10 +138,15 @@ main.full-bleed { padding-block: 0 4.5rem; }
   /* a faint dot grid for texture */
   background-image: radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1.2px);
   background-size: 18px 18px;
+  --wave: #2f6690;
   color: var(--band-text);
-  border-bottom: 5px solid #2f6690;
 }
-.band-inner { padding-block: 4rem 3.5rem; }
+.band-inner { padding-block: 4rem 2.25rem; }
+/* The gentle swell along the banner's bottom edge */
+.band-wave { display: block; width: 100%; height: clamp(1.75rem, 4vw, 3rem); }
+.band-wave-fill { fill: var(--tint); }
+.band-wave.on-page .band-wave-fill { fill: var(--bg); }
+.band-wave-line { fill: none; stroke: var(--wave); stroke-width: 4px; }
 .band h1 { font-size: clamp(2.6rem, 7vw, 4rem); letter-spacing: -.03em; margin-bottom: .75rem; }
 .band-headline {
   margin: 0 0 1.25rem;
@@ -233,7 +238,7 @@ main.full-bleed { padding-block: 0 4.5rem; }
 .edu-school { display: block; color: var(--muted); font-size: .93rem; }
 
 @media (max-width: 30rem) {
-  .band-inner { padding-block: 3rem 2.75rem; }
+  .band-inner { padding-block: 3rem 1.75rem; }
   .actions .button { flex: 1 1 100%; justify-content: center; }
 }
 
