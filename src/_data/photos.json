@@ -5,76 +5,76 @@
     {
       "title": "In the air",
       "photos": [
-        {
-          "file": "ramp-in-flight-kneeling",
-          "alt": "A crew member in a flight helmet kneels on the open rear ramp of a Chinook helicopter in flight, looking out over green farmland.",
-          "caption": "On the open ramp of a CH-47 Chinook in flight."
-        },
-        {
-          "file": "ramp-in-flight-river",
-          "alt": "A crew member sits on the open rear ramp of a Chinook in flight, with fields and a winding river far below.",
-          "caption": "The view from the back of a Chinook."
-        }
+        { "file": "ramp-in-flight-kneeling", "alt": "A crew member in a flight helmet kneels on the open rear ramp of a Chinook helicopter in flight, looking out over green farmland.", "caption": "On the open ramp of a CH-47 Chinook in flight." },
+        { "file": "ramp-in-flight-river", "alt": "A crew member sits on the open rear ramp of a Chinook in flight, with fields and a winding river far below.", "caption": "The view from the back of a Chinook." },
+        { "file": "chinook-over-field", "alt": "A Chinook lifts off over a green field under a blue sky with white clouds, a second Chinook on the ground behind it.", "caption": "A Chinook over the field, with a second one on the ground." },
+        { "file": "chinook-in-flight-overcast", "alt": "A Chinook flies low over a grassy hill on an overcast day.", "caption": "A Chinook coming in on a gray day." },
+        { "file": "chinook-in-flight-hill", "alt": "A Chinook comes in low over a grassy hill on an overcast day, kicking up loose grass.", "caption": "A Chinook landing at the 842nd." }
       ]
     },
     {
-      "title": "Refueling Chinooks",
+      "title": "Refueling aircraft",
       "photos": [
-        {
-          "file": "refuel-hose-from-behind",
-          "alt": "Three soldiers seen from behind connect a black fuel hose to the side of a parked Chinook in a grassy field.",
-          "caption": "Connecting the fuel hose to a Chinook."
-        },
-        {
-          "file": "refuel-hose-crew",
-          "alt": "Two soldiers hold a fuel hose running into a parked Chinook while a crew member in a flight helmet stands nearby.",
-          "caption": "Fuel handlers and aircrew at work."
-        },
-        {
-          "file": "chinook-field-team",
-          "alt": "A Chinook sits in an open field on an overcast day while a group of soldiers stands beside a fuel hose and fire extinguisher.",
-          "caption": "Getting ready to refuel in the field."
-        },
-        {
-          "file": "chinook-briefing",
-          "alt": "A soldier talks to a group gathered at the open rear ramp of a Chinook in a field of tall dry grass.",
-          "caption": "A briefing at the back of the aircraft."
-        },
-        {
-          "file": "chinook-flight-line",
-          "alt": "A Chinook parked on a sunny flight line with a fuel panel open on its side.",
-          "caption": "A Chinook on the flight line."
-        }
+        { "file": "refuel-hose-from-behind", "alt": "Three soldiers seen from behind connect a black fuel hose to the side of a parked Chinook in a grassy field.", "caption": "Connecting the fuel hose to a Chinook." },
+        { "file": "chinook-summer-crew", "alt": "A Chinook sits in tall green grass with its rotors overhead while soldiers and a crew member work at its fuel panel.", "caption": "Soldiers and aircrew at the fuel panel." },
+        { "file": "chinook-fuel-panel", "alt": "Close-up of soldiers and a crew member in a flight helmet connecting a fuel hose to an open panel on the side of a Chinook.", "caption": "Hooking up the hose." },
+        { "file": "refuel-hose-crew", "alt": "Two soldiers hold a fuel hose running into a parked Chinook while a crew member in a flight helmet stands nearby.", "caption": "Fuel handlers and aircrew at work." },
+        { "file": "chinook-field-team", "alt": "A Chinook sits in an open field on an overcast day while a group of soldiers stands beside a fuel hose and fire extinguisher.", "caption": "Getting ready to refuel in the field." },
+        { "file": "fuel-hose-junction-chinook", "alt": "Two soldiers stand by a fuel hose junction in a field of dry grass while others walk toward a parked Chinook.", "caption": "Fuel lines laid out to the aircraft." },
+        { "file": "chinook-briefing", "alt": "A soldier talks to a group gathered at the open rear ramp of a Chinook in a field of tall dry grass.", "caption": "A briefing at the back of the aircraft." },
+        { "file": "blackhawk-refuel-point", "alt": "A Black Hawk helicopter with its rotors turning is refueled by soldiers at an airfield fuel point, with hangars and mountains behind.", "caption": "Refueling a Black Hawk at an airfield." },
+        { "file": "chinook-flight-line", "alt": "A Chinook parked on a sunny flight line with a fuel panel open on its side.", "caption": "A Chinook on the flight line." }
       ]
     },
     {
-      "title": "Ceremonies",
+      "title": "Building fuel farms",
       "photos": [
-        {
-          "file": "change-of-command-salute",
-          "alt": "Patrick Clark salutes an officer during a ceremony while a soldier holds the unit flag and a formation stands behind them.",
-          "caption": "Change of command ceremony."
-        },
-        {
-          "file": "change-of-command-standing",
-          "alt": "Patrick Clark stands at attention facing an officer while a soldier holds the unit flag beside him.",
-          "caption": "Taking command."
-        },
-        {
-          "file": "change-of-command-handshake",
-          "alt": "Patrick Clark shakes hands with a newly promoted sergeant in front of the formation.",
-          "caption": "Congratulating a Soldier on his promotion from Specialist to Sergeant."
-        }
+        { "file": "fuel-farm-drums", "alt": "A Fuel System Supply Point: rows of large tan fuel bags inside framed berms, with tanker trucks and tents in the distance.", "caption": "A Fuel System Supply Point (FSSP), like the one I had at the 842nd." },
+        { "file": "fuel-farm-assembly", "alt": "Soldiers kneel on a tan liner in the sand, fitting together the berm around a large fuel bag.", "caption": "Putting together the berms." },
+        { "file": "fuel-farm-wide", "alt": "Soldiers work among large tan fuel bags and hoses in a dirt field, with tents and mountains in the distance.", "caption": "A fuel farm taking shape." },
+        { "file": "fuel-farm-tankers", "alt": "Inside a tan berm, a filled fuel bag sits connected to hoses while green tanker trucks line up behind.", "caption": "Tankers lined up to fill the fuel bags." },
+        { "file": "fuel-farm-dawn", "alt": "Soldiers gather at a green tanker truck beside the fuel bags under light towers in the early morning.", "caption": "An early start at the fuel farm." }
       ]
     },
     {
-      "title": "Field training",
+      "title": "Fueling vehicles",
       "photos": [
-        {
-          "file": "field-training-table",
-          "alt": "Soldiers gather around a folding table in a pine forest camp with green tents behind them, looking at items laid out on the table.",
-          "caption": "Training in the field."
-        }
+        { "file": "refuel-humvees", "alt": "Soldiers refuel two tan Humvees from a tanker truck on a spill berm, with a yellow spill kit nearby.", "caption": "Refueling Humvees." },
+        { "file": "refuel-truck-line", "alt": "A smiling soldier walks past a line of tan Army trucks parked on spill berms for refueling.", "caption": "Trucks lined up for fuel." },
+        { "file": "refuel-tracked-vehicles-line", "alt": "Soldiers stand by a fuel tanker as armored tracked vehicles pull up to be refueled.", "caption": "Armored vehicles coming in for fuel." },
+        { "file": "refuel-tracked-vehicle-hose", "alt": "Soldiers pass a fuel hose up to another soldier on top of a tan tracked vehicle under a clear blue sky.", "caption": "Passing the hose up." },
+        { "file": "fuel-truck-class", "alt": "A large group of soldiers gathers around the open rear of a tan fuel truck in a motor pool.", "caption": "Soldiers gathered at a fuel truck." }
+      ]
+    },
+    {
+      "title": "Moving heavy equipment",
+      "photos": [
+        { "file": "dozer-lowboy-road", "alt": "Soldiers on a gravel road between a cornfield and a white fence guide a bulldozer onto a low trailer.", "caption": "Loading a bulldozer onto a trailer." },
+        { "file": "dozer-ground-guide", "alt": "A soldier with his back to the camera uses hand signals to guide a bulldozer across a cleared field.", "caption": "Ground-guiding a bulldozer." },
+        { "file": "dozer-close-up", "alt": "Close-up of an olive green military bulldozer pushing a pile of earth and grass.", "caption": "Moving earth." }
+      ]
+    },
+    {
+      "title": "Ceremonies and leading Soldiers",
+      "photos": [
+        { "file": "podium-speaking", "alt": "Patrick Clark, wearing glasses and the rank of first lieutenant, speaks from a wooden podium.", "caption": "Speaking at a ceremony." },
+        { "file": "change-of-command-salute", "alt": "Patrick Clark salutes an officer during a ceremony while a soldier holds the unit flag and a formation stands behind them.", "caption": "Change of command ceremony." },
+        { "file": "change-of-command-standing", "alt": "Patrick Clark stands at attention facing an officer while a soldier holds the unit flag beside him.", "caption": "Taking command." },
+        { "file": "change-of-command-handshake", "alt": "Patrick Clark shakes hands with a newly promoted sergeant in front of the formation.", "caption": "Congratulating a Soldier on his promotion from Specialist to Sergeant." },
+        { "file": "formation-briefing", "alt": "Soldiers stand in a wide circle in a dusty field camp under a blue sky while leaders address them.", "caption": "Talking to the formation in the field." },
+        { "file": "coin-handshake", "alt": "A soldier shakes hands with a colonel and receives a coin beside a fuel berm, with Army trucks parked behind them.", "caption": "A Soldier receiving a coin from a colonel for his work during annual training at Fort McCoy, Wisconsin." }
+      ]
+    },
+    {
+      "title": "In the field",
+      "photos": [
+        { "file": "field-training-table", "alt": "Soldiers gather around a folding table in a pine forest camp with green tents behind them, looking at items laid out on the table.", "caption": "Training in the field." },
+        { "file": "fitness-test", "alt": "Soldiers in black Army PT shirts throw medicine balls and lift kettlebells at test lanes marked with cones on a grassy field.", "caption": "Fitness test day." },
+        { "file": "field-camp-tents", "alt": "Rows of small camouflage tents on cots under tall pine trees.", "caption": "Home for the week." },
+        { "file": "overlooking-range", "alt": "A soldier sits on top of a vehicle looking out over a wide grassy training area and distant hills.", "caption": "Looking out over the training area." },
+        { "file": "humvee-beach", "alt": "A camouflage Humvee drives along the edge of the surf on a beach, with a ship on the horizon.", "caption": "A Humvee at the water's edge." },
+        { "file": "humvee-stuck-sand", "alt": "A camouflage Humvee sits stuck in deep beach sand while a helicopter flies overhead.", "caption": "Stuck in the sand." },
+        { "file": "camp-sunset", "alt": "Soldiers relax and play in a dirt field between rows of tents at sunset.", "caption": "Downtime at the end of the day." }
       ]
     }
   ]
