@@ -35,7 +35,7 @@ function findPrivateDir() {
 // details: lines under the contact details on every private PDF (like a clearance);
 // federalDetails: lines added on the federal version only.
 const PRIVATE_FIELDS = ["phone", "email", "address", "details", "federalDetails", "supervisors"];
-const TAILOR_FIELDS = ["base", "file", "headline", "summary", "skills", "drop", "order", "first"];
+const TAILOR_FIELDS = ["base", "file", "headline", "summary", "skills", "drop", "order", "first", "add"];
 
 function unknownKeys(obj, allowed, where) {
   return Object.keys(obj)
@@ -115,7 +115,14 @@ function loadTailor(resume, bases) {
   if (t.skills !== undefined) {
     problems.push(...checkResume({ skills: t.skills }).map((p) => p.replace(/^resume\.json/, "tailor.json")));
   }
-  const bullets = new Set((resume.experience || []).flatMap((j) => j.highlights || []));
+  const extras = new Set((resume.experience || []).flatMap((j) => j.extra || []));
+  if (t.add !== undefined) {
+    if (!Array.isArray(t.add)) problems.push('tailor.json: add should be a list of bullets copied exactly from a job\'s "extra" in resume.json.');
+    else for (const a of t.add) {
+      if (!extras.has(a)) problems.push(`tailor.json: add "${String(a).slice(0, 60)}..." doesn't match any job's "extra" bullet in resume.json exactly.`);
+    }
+  }
+  const bullets = new Set([...(resume.experience || []).flatMap((j) => j.highlights || []), ...(Array.isArray(t.add) ? t.add : [])]);
   for (const k of ["drop", "first"]) {
     if (t[k] === undefined) continue;
     if (!Array.isArray(t[k])) problems.push(`tailor.json: ${k} should be a list of bullets copied exactly from resume.json.`);
@@ -159,6 +166,7 @@ function loadVersions({ isPrivate = false } = {}) {
       drop: t.drop,
       order: t.order,
       first: t.first,
+      add: t.add,
       tailored: true,
     });
   }

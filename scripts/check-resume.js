@@ -29,7 +29,8 @@ const shape = {
   summary: TEXT,
   links: { label: TEXT, url: TEXT },
   // hours: hours per week, printed only on the federal PDF (USAJOBS asks for it).
-  experience: { title: TEXT, company: TEXT, location: TEXT, start: DATE, end: DATE, hours: TEXT, highlights: LIST },
+  // extra: approved bullets kept off the website and base PDFs; a tailored version can use them ("add" in tailor.json).
+  experience: { title: TEXT, company: TEXT, location: TEXT, start: DATE, end: DATE, hours: TEXT, highlights: LIST, extra: LIST },
   // kind: "civilian" or "military"; the site groups schools by it.
   education: { school: TEXT, credential: TEXT, end: DATE, kind: TEXT },
   certifications: { name: TEXT, issuer: TEXT, date: DATE },

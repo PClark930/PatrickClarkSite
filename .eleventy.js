@@ -23,6 +23,13 @@ module.exports = function (eleventyConfig) {
     Array.isArray(drop) && drop.length ? (items || []).filter((i) => !drop.includes(i)) : items || []
   );
 
+  // ...bring in approved bullets kept off the general versions (a job's "extra")...
+  eleventyConfig.addFilter("withExtras", (job, add) => {
+    const base = (job && job.highlights) || [];
+    if (!Array.isArray(add) || !add.length) return base;
+    return [...base, ...((job && job.extra) || []).filter((e) => add.includes(e))];
+  });
+
   // ...move the bullets that matter most to it to the top of their job...
   eleventyConfig.addFilter("bulletsFirst", (items, first) => {
     items = items || [];
