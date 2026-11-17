@@ -19,7 +19,7 @@
       "end": "",
       "hours": "5",
       "highlights": [
-        "Serve as second-in-command of a 6-person training and evaluation team that coaches, trains, and evaluates Army Reserve units during collective training; have evaluated 5 teams.",
+        "Serve as second-in-command of a 6-person training and evaluation team that coaches, trains, and evaluates Army Reserve units; have evaluated 5 teams.",
         "Coordinate team personnel, logistics, scheduling, and administrative requirements to execute exercises.",
         "Lead After Action Reviews with unit leaders, measuring performance against Army doctrine and standards."
       ]
@@ -32,11 +32,12 @@
       "end": "2026-11",
       "hours": "40+",
       "highlights": [
+        "Oversaw both City pools (Riverfront Community Center and Wollman Aquatic Center) and the Aquatic Manager; monitored water chemistry, filtration, chlorinators, and HVAC, and arranged repairs.",
         "Planned, marketed, and ran 15 community events a year. The largest, Trunk or Treat, drew 840 people in 2025 and 868 in 2026; the Mayor’s Holiday Lighted Parade and Tree Lighting drew about 300.",
         "Managed contractor agreements for nearly every event; coordinated 45 vendors at each flea market.",
         "Marketed every event and class: monthly emails to 1,600 subscribers, flyers, and RecDesk registration.",
-        "Tracked revenues and expenses, processed invoices, and reconciled weekly P-card purchases in Munis.",
-        "Supervised 1 full-time and 62 part-time seasonal staff: recruiting, training, scheduling, and evaluations."
+        "Prepared the annual budget, tracked revenues and expenses, and reconciled P-card purchases and invoices in Munis.",
+        "Supervised 1 full-time and 62 part-time seasonal staff (recruiting, training, scheduling, evaluations); trained Parks and Recreation staff in First Aid, CPR, AED, and Bloodborne Pathogens."
       ]
     },
     {
@@ -47,13 +48,13 @@
       "end": "2025-08",
       "hours": "20",
       "highlights": [
-        "Commanded a 105-Soldier petroleum support company in five platoons that transported and distributed 1.5 million gallons of fuel.",
-        "Briefed Senator Jerry Moran’s national security staff (April 2024) and the 451st Expeditionary Sustainment Command’s commanding general (May 2024) on an $8 million maintenance bay for the Tonganoxie Reserve Center.",
+        "Commanded a 105-Soldier petroleum support company in five platoons that distributed 1.5 million gallons of fuel.",
+        "Briefed Senator Jerry Moran’s national security staff and the 451st Expeditionary Sustainment Command’s commanding general (2024) on an $8 million maintenance bay.",
         "Oversaw three bulk fuel missions (25,000, 15,000, and 12,000 gallons): received, cleaned, and distributed the fuel.",
         "Initiated two FATCOW refueling missions with Bravo Company, 7-158th Aviation, in New Century, KS: about 3,000 gallons each between CH-47 Chinooks, training 20 Soldiers.",
-        "Partnered with the Kansas City Recruiting Battalion; Soldiers represented the unit at 15 community events in 8 locations.",
-        "Raised medical readiness from about 50% to about 85%, and coached 5 Soldiers who had failed the Army fitness test to passing.",
-        "Accountable for over $30 million in property with no items lost; directed 6 full-time staff across personnel, training, operations, maintenance, and supply."
+        "Partnered with the Kansas City Recruiting Battalion: Soldiers represented the unit at 15 events in 8 locations.",
+        "Raised medical readiness from about 50% to about 85%; coached 5 Soldiers who failed the Army fitness test to passing.",
+        "Accountable for over $30 million in property with no items lost; directed 6 full-time staff."
       ]
     },
     {
@@ -76,7 +77,7 @@
       "end": "2022-04",
       "hours": "20",
       "highlights": [
-        "Rated one of the top Platoon Leaders by the battalion commander; key to planning the company’s annual training on short notice."
+        "Rated one of the top Platoon Leaders by the battalion commander; key to planning annual training on short notice."
       ]
     },
     {
@@ -88,8 +89,9 @@
       "hours": "40+",
       "highlights": [
         "Managed 62 part-time seasonal staff across lifeguard, head lifeguard, assistant manager, security, and cashier roles; recruited, trained, and hired most of them.",
-        "Oversaw the City’s Red Cross Learn-to-Swim program (est. 200+ children): 64 lessons each summer, 25+ each other season.",
-        "Taught 2 to 3 American Red Cross Lifeguarding courses a year, plus Water Safety Instructor courses.",
+        "Oversaw Red Cross Learn-to-Swim (est. 200+ children): 64 lessons each summer, 25+ each other season.",
+        "Taught swim lessons, aquacise, 2 to 3 Red Cross Lifeguarding courses a year, and WSI courses; coached the city swim team.",
+        "Ran pool operations (water chemistry, filtration, records, opening, closing, maintenance, schedules, timesheets, supplies); booked swim meets, parties, rentals, and swim team, daycare, and school pool time.",
         "Coordinated yearly harassment training with HR and an active shooter drill with the Police Department."
       ]
     },
@@ -101,7 +103,7 @@
       "end": "2020",
       "hours": "40+",
       "highlights": [
-        "Served as acting Aquatic Manager for 2 months in 2018. Earlier: Head Lifeguard (2015–2017), Lifeguard (2013–2015)."
+        "Acting Aquatic Manager for 2 months in 2018. Earlier: Head Lifeguard (2015–2017), Lifeguard (2013–2015)."
       ]
     }
   ],
@@ -143,12 +145,7 @@
       "date": "2025-02"
     },
     {
-      "name": "Water Safety Instructor",
-      "issuer": "American Red Cross",
-      "date": "2024-12"
-    },
-    {
-      "name": "Water Safety Instructor Trainer",
+      "name": "Water Safety Instructor and Water Safety Instructor Trainer",
       "issuer": "American Red Cross",
       "date": "2024-12"
     },
@@ -192,18 +189,17 @@
         "Recruiting and hiring",
         "Training and certification",
         "Scheduling",
-        "Performance reviews",
-        "Mentoring"
+        "Performance reviews"
       ]
     },
     {
       "group": "Operations and Planning",
       "items": [
-        "Event and mission planning",
+        "Planning",
         "Logistics",
-        "Budget and expense monitoring",
+        "Budgeting",
         "Vendor coordination",
-        "Equipment accountability"
+        "Property accountability"
       ]
     },
     {
@@ -218,7 +214,7 @@
       "group": "Software",
       "items": [
         "Microsoft Word and Excel",
-        "Adobe Acrobat, Express, and Photoshop (basic)",
+        "Adobe Acrobat and Express",
         "DTS",
         "IPPS-A",
         "Munis",
