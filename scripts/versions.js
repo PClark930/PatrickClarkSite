@@ -35,7 +35,7 @@ function findPrivateDir() {
 // details: lines under the contact details on every private PDF (like a clearance);
 // federalDetails: lines added on the federal version only.
 const PRIVATE_FIELDS = ["phone", "email", "address", "details", "federalDetails", "supervisors"];
-const TAILOR_FIELDS = ["base", "file", "headline", "summary", "skills", "drop", "order"];
+const TAILOR_FIELDS = ["base", "file", "headline", "summary", "skills", "drop", "order", "first"];
 
 function unknownKeys(obj, allowed, where) {
   return Object.keys(obj)
@@ -115,12 +115,13 @@ function loadTailor(resume, bases) {
   if (t.skills !== undefined) {
     problems.push(...checkResume({ skills: t.skills }).map((p) => p.replace(/^resume\.json/, "tailor.json")));
   }
-  if (t.drop !== undefined) {
-    const bullets = new Set((resume.experience || []).flatMap((j) => j.highlights || []));
-    if (!Array.isArray(t.drop)) problems.push("tailor.json: drop should be a list of bullets copied exactly from resume.json.");
-    else for (const d of t.drop) {
-      // A drop that matches nothing would leave the bullet in without a word.
-      if (!bullets.has(d)) problems.push(`tailor.json: drop "${String(d).slice(0, 60)}..." doesn't match any bullet in resume.json exactly.`);
+  const bullets = new Set((resume.experience || []).flatMap((j) => j.highlights || []));
+  for (const k of ["drop", "first"]) {
+    if (t[k] === undefined) continue;
+    if (!Array.isArray(t[k])) problems.push(`tailor.json: ${k} should be a list of bullets copied exactly from resume.json.`);
+    else for (const d of t[k]) {
+      // A bullet that matches nothing would be ignored without a word.
+      if (!bullets.has(d)) problems.push(`tailor.json: ${k} "${String(d).slice(0, 60)}..." doesn't match any bullet in resume.json exactly.`);
     }
   }
   if (t.order !== undefined) {
@@ -157,6 +158,7 @@ function loadVersions({ isPrivate = false } = {}) {
       skills: t.skills,
       drop: t.drop,
       order: t.order,
+      first: t.first,
       tailored: true,
     });
   }

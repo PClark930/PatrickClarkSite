@@ -1,10 +1,11 @@
 {
-  "_note": "The format of tailor.json: one extra PDF aimed at a single job posting. It lives next to private.json (never in the public site) and only `npm run pdf` reads it. It starts from a version (`base`) and can change the headline, summary and skills, leave out bullets, and put some jobs first (`order`: job titles copied exactly from resume.json; the rest follow in their usual order). It can't add anything new: every fact still comes from resume.json. Delete the fields you don't use.",
+  "_note": "The format of tailor.json: one extra PDF aimed at a single job posting. It lives next to private.json (never in the public site) and only `npm run pdf` reads it. It starts from a version (`base`) and can change the headline, summary and skills, leave out bullets, and put some jobs first (`order`: job titles copied exactly from resume.json; the rest follow in their usual order), and move some bullets to the top of their job (`first`: bullets copied exactly from resume.json). It can't add anything new: every fact still comes from resume.json. Delete the fields you don't use.",
   "base": "standard",
   "file": "Patrick_Clark_Resume_Posting",
   "headline": "A headline worded for this posting",
   "summary": "A summary worded for this posting, using only facts from resume.json.",
   "skills": [{ "group": "Group name", "items": ["Skill", "Skill"] }],
   "drop": ["A bullet copied exactly from resume.json, to leave out of this version"],
-  "order": ["A job title copied exactly from resume.json, to show first"]
+  "order": ["A job title copied exactly from resume.json, to show first"],
+  "first": ["A bullet copied exactly from resume.json, to move to the top of its job"]
 }

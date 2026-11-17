@@ -44,7 +44,7 @@ eleventyExcludeFromCollections: true
 {%- if r.experience.length %}
 <h2>Experience</h2>
 {%- for job in r.experience | jobsFirst(v.order) %}
-{%- set bullets = job.highlights | without(v.drop) %}
+{%- set bullets = job.highlights | without(v.drop) | bulletsFirst(v.first) %}
 <section class="job">
   <div class="job-head">
     <h3>{{ job.title }}{% if job.company %}, {{ job.company }}{% endif %}</h3>

@@ -23,6 +23,13 @@ module.exports = function (eleventyConfig) {
     Array.isArray(drop) && drop.length ? (items || []).filter((i) => !drop.includes(i)) : items || []
   );
 
+  // ...move the bullets that matter most to it to the top of their job...
+  eleventyConfig.addFilter("bulletsFirst", (items, first) => {
+    items = items || [];
+    if (!Array.isArray(first) || !first.length) return items;
+    return [...items.filter((i) => first.includes(i)), ...items.filter((i) => !first.includes(i))];
+  });
+
   // ...and put the jobs that matter most to it first: titles listed in `order`
   // come first, in that order; the rest follow as they are in resume.json.
   eleventyConfig.addFilter("jobsFirst", (jobs, order) => {
