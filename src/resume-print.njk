@@ -43,7 +43,7 @@ eleventyExcludeFromCollections: true
 
 {%- if r.experience.length %}
 <h2>Experience</h2>
-{%- for job in r.experience %}
+{%- for job in r.experience | jobsFirst(v.order) %}
 {%- set bullets = job.highlights | without(v.drop) %}
 <section class="job">
   <div class="job-head">

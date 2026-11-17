@@ -23,6 +23,15 @@ module.exports = function (eleventyConfig) {
     Array.isArray(drop) && drop.length ? (items || []).filter((i) => !drop.includes(i)) : items || []
   );
 
+  // ...and put the jobs that matter most to it first: titles listed in `order`
+  // come first, in that order; the rest follow as they are in resume.json.
+  eleventyConfig.addFilter("jobsFirst", (jobs, order) => {
+    jobs = jobs || [];
+    if (!Array.isArray(order) || !order.length) return jobs;
+    const rank = (j) => (order.includes(j.title) ? order.indexOf(j.title) : order.length);
+    return jobs.map((j, i) => ({ j, i })).sort((a, b) => rank(a.j) - rank(b.j) || a.i - b.i).map((x) => x.j);
+  });
+
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   // Browsers ask for /favicon.ico on their own; made by scripts/make-icons.js.

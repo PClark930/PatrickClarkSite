@@ -42,7 +42,7 @@ Needs [Node.js](https://nodejs.org) 22 or newer.
 When Patrick wants his resume as a PDF, is applying somewhere (Indeed, USAJOBS), or wants a version for one posting, use the `resume-pdf` skill (`.claude/skills/resume-pdf/SKILL.md`). In short:
 - Three versions, each two pages at most: **standard**, **federal** (USAJOBS: adds hours per week, needs his phone) and **tailored** (one posting).
 - The public site has only the standard one, without his phone. The copies with his phone are built by his private repo, **PClark930/PatrickClarkPrivate**, which holds his private details (`private.json`) and any tailored version (`tailor.json`). Neither file ever goes in this repo.
-- Facts stay in `src/_data/resume.json`; a tailored version can reword the headline, summary and skills and leave bullets out, but never adds a fact.
+- Facts stay in `src/_data/resume.json`; a tailored version can reword the headline, summary and skills, leave bullets out and put some jobs first, but never adds a fact.
 
 ### Checks
 Two checks stop the build with a message saying what to fix. Fix what they point at; don't loosen a check to get past it.

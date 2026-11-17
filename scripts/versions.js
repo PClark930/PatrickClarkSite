@@ -35,7 +35,7 @@ function findPrivateDir() {
 // details: lines under the contact details on every private PDF (like a clearance);
 // federalDetails: lines added on the federal version only.
 const PRIVATE_FIELDS = ["phone", "email", "address", "details", "federalDetails", "supervisors"];
-const TAILOR_FIELDS = ["base", "file", "headline", "summary", "skills", "drop"];
+const TAILOR_FIELDS = ["base", "file", "headline", "summary", "skills", "drop", "order"];
 
 function unknownKeys(obj, allowed, where) {
   return Object.keys(obj)
@@ -123,6 +123,14 @@ function loadTailor(resume, bases) {
       if (!bullets.has(d)) problems.push(`tailor.json: drop "${String(d).slice(0, 60)}..." doesn't match any bullet in resume.json exactly.`);
     }
   }
+  if (t.order !== undefined) {
+    // Job titles to show first. A title that matches nothing would be ignored without a word.
+    const titles = new Set((resume.experience || []).map((j) => j.title));
+    if (!Array.isArray(t.order)) problems.push("tailor.json: order should be a list of job titles copied exactly from resume.json.");
+    else for (const o of t.order) {
+      if (!titles.has(o)) problems.push(`tailor.json: order "${String(o).slice(0, 60)}" doesn't match any job title in resume.json exactly.`);
+    }
+  }
   fail("tailor.json", problems);
   return t;
 }
@@ -148,6 +156,7 @@ function loadVersions({ isPrivate = false } = {}) {
       summary: t.summary,
       skills: t.skills,
       drop: t.drop,
+      order: t.order,
       tailored: true,
     });
   }
